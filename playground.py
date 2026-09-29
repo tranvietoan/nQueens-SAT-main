@@ -1,31 +1,48 @@
 from pysat.solvers import Glucose3
 from binomial import binomial_amo
-N=8
+from sequential import SequentialEncoder
+N=600
 
 def var(r, c):
  return r*N+c+1
 
+# Lấy thử 1 hàng để so sánh trực tiếp số clause sinh ra
+sample_row_vars = [var(0, j) for j in range(N)]
+
+bin_clauses = binomial_amo(sample_row_vars)
+
+# Khởi tạo Sequential Encoder với ID biến phụ bắt đầu từ N*N + 1
+seq_encoder = SequentialEncoder(N * N + 1)
+seq_clauses = seq_encoder.encode_amo(sample_row_vars)
+
+print(f"--- SO SÁNH KÍCH THƯỚC CHO 1 HÀNG/CỘT (N={N}) ---")
+print(f"Binomial (Pairwise) sinh ra : {len(bin_clauses)} clauses")
+print(f"Sequential Counter sinh ra  : {len(seq_clauses)} clauses")
+print("-" * 50)
+
 solver = Glucose3()
 
+total_clauses_added = 0
 
 for i in range(N):
     row_vars = [var(i,j) for j in range(N)]
     #ALO cho hàng
     solver.add_clause(row_vars)
+    total_clauses_added += 1
     #AMO cho hàng
-    for j1 in range(N):
-        for j2 in range(j1+1,N):
-            solver.add_clause([-row_vars[j1],-row_vars[j2]])
+    row_amo= seq_encoder.encode_amo(row_vars)
+    solver.append_formula(row_amo)
+    total_clauses_added+=len(row_amo)
 
 for j in range(N):
     col_vars = [var(i,j) for i in range(N)]
     #ALO cho cột
-    (solver.add_clause(col_vars))
+    solver.add_clause(col_vars)
+    total_clauses_added += 1
     # AMO cho cột
-    for i1 in range(N):
-        for i2 in range(i1+1,N):
-            solver.add_clause([-col_vars[i1],-col_vars[i2]])
-
+    col_amo= seq_encoder.encode_amo(col_vars)
+    solver.append_formula(col_amo)
+    total_clauses_added+=len(col_amo)
 
 main_diagonals = {}
 anti_diagonals = {}
@@ -44,27 +61,25 @@ for i in range(N):
             anti_diagonals[key_anti] = []
         anti_diagonals[key_anti].append(variable_id)
 
-# AMO cho hàng và cột
-for i in range(N):
-    row_vars = [var(i, j) for j in range(N)]
-    solver.append_formula(binomial_amo(row_vars))
-
-for j in range(N):
-    col_vars = [var(i, j) for i in range(N)]
-    solver.append_formula(binomial_amo(col_vars))
-
 # AMO cho đường chéo chính
 for diag_vars in main_diagonals.values():
     # Chỉ xét các đường chéo có từ 2 ô trở lên
     if len(diag_vars) > 1:
-        solver.append_formula(binomial_amo(diag_vars))
+        diag_amo= seq_encoder.encode_amo(diag_vars)
+        solver.append_formula(diag_amo)
+        total_clauses_added+=len(diag_amo)
 
 # AMO cho đường chéo phụ
 for diag_vars in anti_diagonals.values():
     if len(diag_vars) > 1:
-        solver.append_formula(binomial_amo(diag_vars))
+        diag_amo= seq_encoder.encode_amo(diag_vars)
+        solver.append_formula(diag_amo)
+        total_clauses_added+=len(diag_amo)
 
+print(f"Tổng số clause đã nạp vào solver : {total_clauses_added}")
+print(f"ID biến phụ tiếp theo khả dụng   : {seq_encoder.next_aux_id}")
 print("Đang tìm nghiệm...")
+
 if solver.solve():
     print(f"Đã tìm thấy nghiệm cho {N}-Queens!")
     model = solver.get_model()
