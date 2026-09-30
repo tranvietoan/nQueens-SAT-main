@@ -29,6 +29,7 @@ class SequentialEncoder:
 
             # Luật cấm
             clauses.append([-s_prev,-x_i])
+        
     # Luật biên phải
         clauses.append([-s[n-2],-variables[n-1]])
 

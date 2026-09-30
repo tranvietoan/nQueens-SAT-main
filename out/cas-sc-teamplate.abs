@@ -1,9 +1,7 @@
-This template helps you to create a properly formatted \LaTeX\ manuscript.
-
-\noindent\texttt{\textbackslash begin{abstract}} \dots
-\texttt{\textbackslash end{abstract}} and
-\verb+\begin{keyword}+ \verb+...+ \verb+\end{keyword}+
-which
-contain the abstract and keywords respectively.
-
-\noindent Each keyword shall be separated by a \verb+\sep+ command.
+Bài báo này trình bày phương pháp giải bài toán N-Queens bằng cách chuyển đổi thành bài toán thỏa mãn logic mệnh
+        đề (SAT) thông qua thư viện PySAT. Trọng tâm của nghiên cứu là thiết kế và đánh giá các kỹ thuật mã hóa
+        (encoding)để biểu diễn ràng buộc ``tối đa một'' (At-Most-One - AMO) và ``ít nhất một'' (At-Least-One - ALO).
+        Chúng tôi triển khai phương háp mã hóa Sequential Counter nhằm giảm thiểu số lượng mệnh đề sinh ra so với phương
+        pháp Pairwise truyền thống. Kết quả của cấu hình SAT sẽ được thiết kế để đối chiếu thực nghiệm với các bộ giải
+        chính xác (ILP, CP) như Cplex, Gurobi và CP-SAT trên các ma trận kích thước lớn.
+    
