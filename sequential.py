@@ -18,7 +18,7 @@ class SequentialEncoder:
     # Luật biên trái x_i-> s_i
         clauses.append([-variables[0],s[0]])
     # Luật ở giữa 1<i<n
-        for i in range(n-1):
+        for i in range(1,n-1):
             x_i=variables[i]
             s_prev=s[i-1]
             s_cur=s[i]
