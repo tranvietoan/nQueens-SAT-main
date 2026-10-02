@@ -1,7 +1,10 @@
+import time
+
 from pysat.solvers import Glucose3
 from binomial import binomial_amo
 from sequential import SequentialEncoder
-N=100
+from commander import CommanderEncoder
+N=500
 
 def var(r, c):
  return r*N+c+1
@@ -18,12 +21,14 @@ seq_clauses = seq_encoder.encode_amo(sample_row_vars)
 print(f"--- SO SÁNH KÍCH THƯỚC CHO 1 HÀNG/CỘT (N={N}) ---")
 print(f"Binomial (Pairwise) sinh ra : {len(bin_clauses)} clauses")
 print(f"Sequential Counter sinh ra  : {len(seq_clauses)} clauses")
-print("-" * 50)
+print("-" * 55)
 
+start_time = time.time()
 solver = Glucose3()
 
 total_clauses_added = 0
-
+# Khởi tạo Commander với group_size=3
+active_encoder = CommanderEncoder(N * N + 1, group_size=3)
 for i in range(N):
     # Đánh số cho từng ô
     row_vars = [var(i,j) for j in range(N)]
@@ -32,11 +37,14 @@ for i in range(N):
     solver.add_clause(row_vars)
     solver.add_clause(col_vars)
     total_clauses_added += 2
+
     #AMO cho hàng và cột
-    row_amo= seq_encoder.encode_amo(row_vars)
+    #row_amo=seq_encoder.encode_amo(row_vars)
+    row_amo= active_encoder.encode_amo(row_vars)
     solver.append_formula(row_amo)
 
-    col_amo= seq_encoder.encode_amo(col_vars)
+    #col_amo=seq_encoder.encode_amo(col_vars)
+    col_amo= active_encoder.encode_amo(col_vars)
     solver.append_formula(col_amo)
 
     total_clauses_added+=len(row_amo) + len(col_amo)
@@ -59,7 +67,8 @@ for i in range(N):
 for diag_vars in list(main_diagonals.values()) + list(anti_diagonals.values()):
     # Chỉ xét các đường chéo có từ 2 ô trở lên
     if len(diag_vars) > 1:
-        diag_amo= seq_encoder.encode_amo(diag_vars)
+        #diag_amo=seq_encoder.encode_amo(diag_vars)
+        diag_amo= active_encoder.encode_amo(diag_vars)
         solver.append_formula(diag_amo)
         total_clauses_added+=len(diag_amo)
 
@@ -69,7 +78,8 @@ print(f"ID biến phụ tiếp theo khả dụng   : {seq_encoder.next_aux_id}")
 print("Đang tìm nghiệm...")
 
 if solver.solve():
-    print(f"Đã tìm thấy nghiệm cho {N}-Queens!")
+    solve_time = time.time() - start_time
+    print(f"Đã tìm thấy nghiệm cho {N}-Queens! trong {solve_time:.4f} giây!")
     model = solver.get_model()
     # Lọc ra các biến mang giá trị dương (True)
     queens = [v for v in model if v > 0]

@@ -13,13 +13,14 @@
     \title[mode=title]{Biểu diễn SAT tối ưu cho bài toán N-Queens: Đánh giá thực nghiệm các phương pháp mã hóa}
 
     \author[1]{Trần Việt Toàn}
-    \address[1]{Trường Đại học Công nghệ- DHQGHN}
+    \address[1]{Trường Đại học Công nghệ - ĐHQGHN}
 
     \begin{abstract}
         Bài báo này trình bày phương pháp giải bài toán N-Queens bằng cách chuyển đổi thành bài toán thỏa mãn logic mệnh
         đề (SAT) thông qua thư viện PySAT. Trọng tâm của nghiên cứu là thiết kế và đánh giá các kỹ thuật mã hóa
-        (encoding)để biểu diễn ràng buộc ``tối đa một'' (At-Most-One - AMO) và ``ít nhất một'' (At-Least-One - ALO).
-        Chúng tôi triển khai phương háp mã hóa Sequential Counter nhằm giảm thiểu số lượng mệnh đề sinh ra so với phương
+        (encoding) để biểu diễn ràng buộc ``tối đa một'' (At-Most-One - AMO) và ``ít nhất một'' (At-Least-One - ALO).
+        Chúng tôi triển khai phương pháp mã hóa Sequential Counter và Commander nhằm giảm thiểu số lượng mệnh đề sinh ra
+        so với phương
         pháp Pairwise truyền thống. Kết quả của cấu hình SAT sẽ được thiết kế để đối chiếu thực nghiệm với các bộ giải
         chính xác (ILP, CP) như Cplex, Gurobi và CP-SAT trên các ma trận kích thước lớn.
     \end{abstract}
@@ -29,9 +30,12 @@
 
     \section{Giới thiệu}\label{sec:intro}
     N-Queens là một bài toán tối ưu tổ hợp kinh điển, yêu cầu đặt $N$ quân Hậu lên bàn cờ $N \times N$ sao cho không
-    có bất kỳ hai quân Hậu nào tấn công nhau. Để giải quyết bài toán này trên quy mô lớn ($N = 50, 100, 500$), việc sử
-    các thuật toán quay lui (backtracking) thông thường là không khả thi.Thay vào đó, bài toán được dịch sang dạng chuẩn
-    CNF(Conjunctive Normal Form) để giải bằng các công cụ SAT Solver hiện đại thông qua thư viện PySAT. Mục tiêu của báo
+    có bất kỳ hai quân Hậu nào tấn công nhau. Để giải quyết bài toán này trên quy mô lớn ($N = 50, 100, 500$
+    ), việc sử dụng
+    các thuật toán quay lui (backtracking) thông thường là không khả thi. Thay vào đó, bài toán được dịch sang dạng
+    chuẩn
+    CNF (Conjunctive Normal Form) để giải bằng các công cụ SAT Solver hiện đại thông qua thư viện PySAT. Mục tiêu của
+    báo
     cáo là so sánh hiệu năng của phương pháp SAT Solving với các phương pháp lập trình nguyên thủy (ILP) và lập trình
     ràng buộc (CP) thông qua các thông số cốt lõi: số lượng biến ($n_v$), số lượng mệnh đề ($n_c$), thời gian xây dựng
     mô hình và thời gian tìm kiếm.
@@ -92,8 +96,29 @@
         \end{equation}
     \end{itemize}
 
-    Việc áp dụng Sequential Counter giúp giảm số lượng mệnh đề cho ràng buộc AMO từ $\mathcal{O}(N^2)$ xuống chỉ còn
-    $3N-4$ mệnh đề, đổi lại việc sử dụng thêm $N-1$ biến phụ.
-    Điều này tạo ra cấu trúc suy luận hiệu quả hơn cho quá trình Unit Propagation của SAT Solver.
+    \subsection{Tối ưu Ràng buộc AMO bằng Commander Encoding}\label{subsec:amo_cmd}
+    Khi quy mô bàn cờ tăng lên, phương pháp Sequential có thể tạo ra chuỗi lan truyền dài. Để kiểm soát cấu trúc biến
+    phụ, chúng tôi áp dụng phương pháp \textbf{Commander Encoding}. Kỹ thuật này chia các biến thành nhóm, tạo một biến
+    đại diện cho mỗi nhóm rồi áp đặt AMO lên các đại diện đó; phương pháp này giúp tạo tính cục bộ (locality) theo
+    khối và cực kỳ phù hợp cho các miền biến vừa và lớn[cite: 13]. Cho tập hợp $n$ biến, thuật toán phân hoạch chúng
+    thành các nhóm $G_1, G_2, \dots, G_m$ có kích thước cố định (ví dụ$g = 3$). Mỗi nhóm $G_i$ được gán một biến chỉ huy
+    (commander variable) $C_i$. Hệ thống luật được quy đổi sang CNF bao gồm:
+    \begin{itemize}
+        \item \textbf{Luật Chỉ huy Sai:}
+        Nếu biến chỉ huy mang giá trị False, tất cả biến trong nhóm phải mang giá trị False.
+        \begin{equation}
+            C_i \lor \neg X_k \quad (\forall X_k \in G_i)
+        \end{equation}
+        \item \textbf{Luật Chỉ huy Đúng:}
+        Nếu biến chỉ huy mang giá trị True, có chính xác một biến trong nhóm mang giá trị True. Điều kiện này bao gồm
+        ALO cục bộ:
+        \begin{equation}
+            \neg C_i \lor \bigvee_{X_k \in G_i} X_k
+        \end{equation}
+        và AMO nội bộ bằng cách áp dụng phương pháp Pairwise cho các cặp biến $(X_a, X_b)$ bên trong $G_i$:
+        $\neg X_a \lor \neg X_b$.
+        \item \textbf{Ràng buộc trên Chỉ huy:} Bản thân các biến chỉ huy $C_1, \dots, C_m$
+        tiếp tục phải tuân thủ điều kiện AMO. Nếu số lượng chỉ huy lớn, quá trình gom nhóm được áp dụng đệ quy.
+    \end{itemize}
 
 \end{document}
