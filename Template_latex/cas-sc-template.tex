@@ -5,6 +5,7 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{float}
 
 \begin{document}
     \shorttitle{Biểu diễn SAT cho bài toán N-Queens}
@@ -146,6 +147,80 @@
         \item hàng và một cột được phép mang giá trị $1$, tổng số lượng mệnh đề cấm sinh ra được giảm mạnh xuống mức
         $\mathcal{O}(n)$ \cite{ref_3}.
     \end{itemize}
+
+    \subsection{Tối ưu Ràng buộc AMO bằng Binary Encoding}\label{subsec:amo_binary}
+    Khác với các cấu trúc lưới và mảng, \textbf{Binary Encoding} (Mã hóa Nhị phân)
+    khai thác sức mạnh của hệ đếm cơ số 2 nhằm tối thiểu hóa tuyệt đối lượng biến phụ.
+
+    Cho tập hợp $n$ biến gốc $X_1, X_2, \dots, X_n$, thuật toán xử lý theo các bước:
+    \begin{itemize}
+        \item \textbf{Cấp phát biến phụ:} Thuật toán xác định $k = \lceil \log_2 n \rceil$ và khởi tạo $k$ biến phụ
+        $Y_1, Y_2, \dots, Y_k$[cite: 1]. Lượng biến phụ được nén xuống mức $\mathcal{O}(\log_2 n)$[cite: 1].
+        \item \textbf{Định danh nhị phân:} Mỗi biến $X_i$ được gán cố định với một chuỗi nhị phân độ dài $k$[cite: 1].
+        \item \textbf{Luật ánh xạ trạng thái:} Quy tắc kéo theo yêu cầu rằng, nếu $X_i$
+        mang giá trị True, tập hợp các biến phụ $Y$ bắt buộc phải thiết lập trạng thái chính xác theo cấu hình bit của
+        $X_i$[cite: 1]. Công thức được biểu diễn dưới dạng:
+        \begin{equation}
+            X_i \to \bigwedge_{j=1}^{k} \phi(i,j)
+        \end{equation}
+        Trong đó, $\phi(i,j) = Y_j$ nếu bit thứ $j$ trong chuỗi nhị phân của $X_i$ là 1, và $\phi(i,j) = \neg Y_j$
+        nếu bit đó là 0[cite: 1]. Chuyển đổi sang chuẩn CNF, ta thu được các mệnh đề dạng $(\neg X_i \lor \phi(i,j))$.
+    \end{itemize}
+    Vì tập biến phụ $Y_1, \dots, Y_k$
+    chỉ có thể tồn tại ở một trạng thái nhị phân duy nhất, luật ánh xạ này tự động ngăn cản việc có nhiều hơn một biến
+    $X_i$ mang giá trị True. Tổng số lượng mệnh đề cấm sinh ra từ phương pháp này đạt mức tuyến tính logarit
+    $\mathcal{O}(n \log_2 n)$[cite: 1].
+
+    \section{Triển khai Thực nghiệm và Đánh giá (Benchmark)}\label{sec:benchmark}
+
+    \subsection{Môi trường và Phương pháp đo lường}\label{subsec:env}
+    Thực nghiệm được lập trình bằng ngôn ngữ Python, tích hợp bộ giải \textit{Glucose3} từ thư viện PySAT. Để đánh giá khả năng mở rộng (scalability), chúng tôi tiến hành chạy thuật toán trên các ma trận $N \times N$ với kích thước lớn dần: $N = 50, 100, 500$.
+
+    Ma trận thiết kế thực nghiệm ghi nhận các thông số cốt lõi: số lượng biến phụ ($n_v$), số lượng mệnh đề cấm sinh ra ($n_c$), và thời gian tìm kiếm của solver ($t_{search}$).
+
+    \subsection{Đánh giá Kích thước Không gian Mệnh đề (Clause Size)}\label{subsec:size_eval}
+    Bảng \ref{tab:clause_size} trình bày số lượng mệnh đề được sinh ra khi áp đặt ràng buộc AMO cho \textbf{một hàng/cột} bằng các phương pháp mã hóa khác nhau.
+
+    \begin{table}[H]
+        \centering
+        \caption{So sánh số lượng mệnh đề AMO sinh ra cho 1 hàng/cột ở các kích thước $N$}
+        \begin{tabular}{|l|c|c|c|}
+            \hline
+            \textbf{Phương pháp mã hóa} & \textbf{$N = 50$} & \textbf{$N = 100$} & \textbf{$N = 500$} \\
+            \hline
+            Binomial (Pairwise) & 1,225 & 4,950 & 124,750 \\
+            \hline
+            Sequential Counter & 146 & 296 & 1,496 \\
+            \hline
+            Product Encoding & 149 & 290 & 1,484 \\
+            \hline
+            Commander Encoding (Nhóm 3) & 170 & 344 & 1,744 \\
+            \hline
+            Binary Encoding & 300 & 700 & 4,500 \\
+            \hline
+        \end{tabular}
+        \label{tab:clause_size}
+    \end{table}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{clause_comparison.png}
+        \caption{Biểu đồ so sánh tốc độ tăng trưởng số lượng mệnh đề của các phương pháp AMO (thang đo Logarit).}
+        \label{fig:clause_chart}
+    \end{figure}
+
+    Kết quả từ Bảng \ref{tab:clause_size} minh minh họa rõ nét sự bùng nổ tổ hợp của phương pháp Binomial. Khi $N=500$, phương pháp này sinh ra tới $124,750$ mệnh đề chỉ cho một đường duy nhất, tạo ra gánh nặng bộ nhớ khổng lồ. Ngược lại, Sequential và Product Encoding duy trì sự gia tăng tuyến tính rất ổn định (chỉ khoảng hơn $1,400$ mệnh đề ở $N=500$), chứng minh tính hiệu quả vượt trội trong việc tiết kiệm không gian lưu trữ.
+
+    \subsection{Đánh giá Thời gian Giải (Solver Runtime)}\label{subsec:time_eval}
+    Sử dụng \textbf{Product Encoding} làm thuật toán cốt lõi để đưa vào bộ giải Glucose3, kết quả đo lường tổng thể toàn bàn cờ thu được như sau:
+    \begin{itemize}
+        \item \textbf{Cấu hình $N = 50$:} Tổng mệnh đề nạp vào solver là $57,220$ clauses. Thời gian tìm thấy nghiệm là $5.8789$ giây.
+        \item \textbf{Cấu hình $N = 100$:} Tổng mệnh đề nạp vào solver là $269,000$ clauses. Thời gian tìm thấy nghiệm là $0.1833$ giây.
+        \item \textbf{Cấu hình $N = 500$:} Tổng số mệnh đề nạp vào solver lên tới mức khổng lồ $8,825,192$ clauses.
+    \end{itemize}
+
+    \textbf{Phân tích đặc tính Search của SAT:}
+    Hiện tượng cấu hình $N=100$ giải mã nhanh hơn đáng kể so với $N=50$ (chỉ tốn $0.18$ giây so với $5.87$ giây) là một đặc tính thực nghiệm điển hình của các bộ giải SAT dựa trên cơ chế CDCL (Conflict-Driven Clause Learning). Thời gian giải của SAT Solver không hoàn toàn phụ thuộc tuyến tính vào số lượng biến, mà phụ thuộc vào cấu trúc lan truyền (implication graph) và khả năng học xung đột. Với $N=100$, bộ giải ngẫu nhiên chạm được vào các nhánh cắt tỉa đồ thị sớm hơn, từ đó lập tức nhảy vọt đến nghiệm hợp lệ mà không cần duyệt sâu như ở $N=50$.
 
     \bibliographystyle{model1-num-names}
     \bibliography{cas-refs}

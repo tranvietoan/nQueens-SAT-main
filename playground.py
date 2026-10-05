@@ -5,7 +5,8 @@ from binomial import binomial_amo
 from sequential import SequentialEncoder
 from commander import CommanderEncoder
 from product import ProductEncoder
-N=25
+from binary import BinaryEncoder
+N=500
 
 def var(r, c):
  return r*N+c+1
@@ -25,11 +26,15 @@ cmd_clauses = cmd_encoder.encode_amo(sample_row_vars)
 prod_encoder = ProductEncoder(N * N + 1)
 prod_clauses = prod_encoder.encode_amo(sample_row_vars)
 
+binary_encoder = BinaryEncoder(N*N+1)
+binary_clauses= binary_encoder.encode_amo(sample_row_vars)
+
 print(f"--- SO SÁNH KÍCH THƯỚC CHO 1 HÀNG/CỘT (N={N}) ---")
 print(f"Binomial (Pairwise) sinh ra : {len(bin_clauses)} clauses")
 print(f"Sequential Counter sinh ra  : {len(seq_clauses)} clauses")
 print(f"Commander (Nhóm 3) sinh ra  : {len(cmd_clauses)} clauses")
 print(f"Product Encoding sinh ra    : {len(prod_clauses)} clauses")
+print(f"Binary Encoding sinh ra    : {len(binary_clauses)} clauses")
 print("-" * 55)
 
 start_time = time.time()
@@ -37,7 +42,7 @@ solver = Glucose3()
 
 total_clauses_added = 0
 # Khởi tạo Commander với group_size=3
-active_encoder = ProductEncoder(N*N+1)
+bin_encoder = BinaryEncoder(N * N + 1)
 for i in range(N):
     # Đánh số cho từng ô
     row_vars = [var(i,j) for j in range(N)]
@@ -48,12 +53,11 @@ for i in range(N):
     total_clauses_added += 2
 
     #AMO cho hàng và cột
-    #row_amo=seq_encoder.encode_amo(row_vars)
-    row_amo= active_encoder.encode_amo(row_vars)
+    row_amo= bin_encoder.encode_amo(row_vars)
     solver.append_formula(row_amo)
 
-    #col_amo=seq_encoder.encode_amo(col_vars)
-    col_amo= active_encoder.encode_amo(col_vars)
+
+    col_amo= bin_encoder.encode_amo(col_vars)
     solver.append_formula(col_amo)
 
     total_clauses_added+=len(row_amo) + len(col_amo)
@@ -77,7 +81,7 @@ for diag_vars in list(main_diagonals.values()) + list(anti_diagonals.values()):
     # Chỉ xét các đường chéo có từ 2 ô trở lên
     if len(diag_vars) > 1:
         #diag_amo=seq_encoder.encode_amo(diag_vars)
-        diag_amo= active_encoder.encode_amo(diag_vars)
+        diag_amo= bin_encoder.encode_amo(diag_vars)
         solver.append_formula(diag_amo)
         total_clauses_added+=len(diag_amo)
 
