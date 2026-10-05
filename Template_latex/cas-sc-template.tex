@@ -1,4 +1,4 @@
-\documentclass[a4paper,fleqn]{cas-sc}
+\documentclass[a4paper,fleqn,numbers]{cas-sc}
 \usepackage[utf8]{inputenc}
 \usepackage[T5]{fontenc}
 \usepackage[vietnamese]{babel}
@@ -20,9 +20,8 @@
         đề (SAT) thông qua thư viện PySAT. Trọng tâm của nghiên cứu là thiết kế và đánh giá các kỹ thuật mã hóa
         (encoding) để biểu diễn ràng buộc ``tối đa một'' (At-Most-One - AMO) và ``ít nhất một'' (At-Least-One - ALO).
         Chúng tôi triển khai phương pháp mã hóa Sequential Counter và Commander nhằm giảm thiểu số lượng mệnh đề sinh ra
-        so với phương
-        pháp Pairwise truyền thống. Kết quả của cấu hình SAT sẽ được thiết kế để đối chiếu thực nghiệm với các bộ giải
-        chính xác (ILP, CP) như Cplex, Gurobi và CP-SAT trên các ma trận kích thước lớn.
+        so với phương pháp Pairwise truyền thống. Kết quả của cấu hình SAT sẽ được thiết kế để đối chiếu thực nghiệm với
+        các bộ giải chính xác (ILP, CP) như Cplex, Gurobi và CP-SAT trên các ma trận kích thước lớn.
     \end{abstract}
 
     \maketitle
@@ -35,8 +34,8 @@
     các thuật toán quay lui (backtracking) thông thường là không khả thi. Thay vào đó, bài toán được dịch sang dạng
     chuẩn
     CNF (Conjunctive Normal Form) để giải bằng các công cụ SAT Solver hiện đại thông qua thư viện PySAT. Mục tiêu của
-    báo
-    cáo là so sánh hiệu năng của phương pháp SAT Solving với các phương pháp lập trình nguyên thủy (ILP) và lập trình
+    báo cáo là so sánh hiệu năng của phương pháp SAT Solving với các phương pháp lập trình nguyên thủy (ILP) và lập
+    trình
     ràng buộc (CP) thông qua các thông số cốt lõi: số lượng biến ($n_v$), số lượng mệnh đề ($n_c$), thời gian xây dựng
     mô hình và thời gian tìm kiếm.
 
@@ -70,8 +69,8 @@
 
     Để tối ưu, chúng tôi cài đặt phương pháp \textbf{Sequential Counter} (Bộ đếm tuần tự).
     Phương pháp này giới thiệu $N-1$ biến phụ (auxiliary variables) $S_1, S_2, \dots, S_{N-1}$ cho mỗi dãy $N$ ô.
-    Biến $S_i$ mang ý nghĩa trạng thái: $S_i = \text{True}$
-    khi và chỉ khi tồn tại ít nhất một biến mang giá trị True trong tập tiền tố $(X_1, X_2, \dots, X_i)$.
+    Biến $S_i$ mang ý nghĩa trạng thái: $S_i = 1 \text{ (True)}$
+    khi và chỉ khi tồn tại ít nhất một biến mang giá trị $1$ trong tập tiền tố $(X_1, X_2, \dots, X_i)$.
 
     Hệ thống luật của Sequential Counter được dịch sang CNF như sau:
     \begin{itemize}
@@ -98,21 +97,24 @@
 
     \subsection{Tối ưu Ràng buộc AMO bằng Commander Encoding}\label{subsec:amo_cmd}
     Khi quy mô bàn cờ tăng lên, phương pháp Sequential có thể tạo ra chuỗi lan truyền dài. Để kiểm soát cấu trúc biến
-    phụ, chúng tôi áp dụng phương pháp \textbf{Commander Encoding}. Kỹ thuật này chia các biến thành nhóm, tạo một biến
+    phụ, chúng tôi áp dụng phương pháp \textbf{Commander Encoding} (Mã hóa Chỉ huy)
+    . Kỹ thuật này chia các biến thành nhóm, tạo một biến
     đại diện cho mỗi nhóm rồi áp đặt AMO lên các đại diện đó; phương pháp này giúp tạo tính cục bộ (locality) theo
-    khối và cực kỳ phù hợp cho các miền biến vừa và lớn[cite: 13]. Cho tập hợp $n$ biến, thuật toán phân hoạch chúng
-    thành các nhóm $G_1, G_2, \dots, G_m$ có kích thước cố định (ví dụ$g = 3$). Mỗi nhóm $G_i$ được gán một biến chỉ huy
+    khối và cực kỳ phù hợp cho các miền biến vừa và lớn \cite{ref_13}. Cho tập hợp $n$ biến, thuật toán phân hoạch chúng
+    thành các nhóm $G_1, G_2, \dots, G_m$ có kích thước cố định (ví dụ $g = 3$). Mỗi nhóm $G_i$
+    được gán một biến chỉ huy
     (commander variable) $C_i$. Hệ thống luật được quy đổi sang CNF bao gồm:
     \begin{itemize}
         \item \textbf{Luật Chỉ huy Sai:}
-        Nếu biến chỉ huy mang giá trị False, tất cả biến trong nhóm phải mang giá trị False.
-        \begin{equation}
+        Nếu biến chỉ huy mang giá trị $0$ (False), tất cả biến trong nhóm phải mang giá trị $0$.
+        \begin{equation}\label{eq:cmd_false}
             C_i \lor \neg X_k \quad (\forall X_k \in G_i)
         \end{equation}
         \item \textbf{Luật Chỉ huy Đúng:}
-        Nếu biến chỉ huy mang giá trị True, có chính xác một biến trong nhóm mang giá trị True. Điều kiện này bao gồm
+        Nếu biến chỉ huy mang giá trị $1$ (True), có chính xác một biến trong nhóm mang giá trị $1$
+        . Điều kiện này bao gồm
         ALO cục bộ:
-        \begin{equation}
+        \begin{equation}\label{eq:cmd_true}
             \neg C_i \lor \bigvee_{X_k \in G_i} X_k
         \end{equation}
         và AMO nội bộ bằng cách áp dụng phương pháp Pairwise cho các cặp biến $(X_a, X_b)$ bên trong $G_i$:
@@ -120,5 +122,33 @@
         \item \textbf{Ràng buộc trên Chỉ huy:} Bản thân các biến chỉ huy $C_1, \dots, C_m$
         tiếp tục phải tuân thủ điều kiện AMO. Nếu số lượng chỉ huy lớn, quá trình gom nhóm được áp dụng đệ quy.
     \end{itemize}
+
+    \subsection{Tối ưu Ràng buộc AMO bằng Product Encoding}\label{subsec:amo_product}
+    Bên cạnh cấu trúc lan truyền tuần tự và chia nhóm cục bộ, phương pháp \textbf{Product Encoding} (Mã hóa Tích) xử lý
+    ràng buộc AMO bằng cách phân rã bài toán lớn thành các ràng buộc nhỏ hơn dựa trên cấu trúc lưới hai chiều
+    \cite{ref_2}. Việc đưa cấu trúc mảng 1D về dạng lưới 2D giúp khống chế số lượng mệnh đề cấm một cách hiệu quả, đặc
+    biệt tối ưu cho các không gian trạng thái lớn \cite{ref_3}. Quá trình mã hóa cho tập hợp $n$ biến gốc $X_1, X_2,
+    \dots, X_n$ được thực hiện qua các bước sau:
+    \begin{itemize}
+        \item \textbf{Khởi tạo tọa độ ảo:} Thiết lập một ma trận kích thước $p \times q$, với $p = \lceil\sqrt{n}\rceil$
+        \item và $q = \lceil n/p \rceil$ \cite{ref_2}.\item \textbf{Sinh biến phụ:} Cấp phát $p$ biến phụ $r_1, \dots,
+        r_p$ đại diện cho các hàng ảo và $q$ biến phụ $c_1, \dots, c_q$ đại diện cho các cột ảo. Lượng biến phụ được
+        \item khống chế ở mức $\mathcal{O}(\sqrt{n})$ \cite{ref_3}.
+        \item \textbf{Ánh xạ biến gốc:} Mỗi biến $X_k$ được ánh xạ tới một tọa độ duy nhất $(r_u, c_v)$ \cite{ref_2}.
+        \item Quy tắc kéo theo yêu cầu nếu $X_k$ nhận giá trị $1$ (True), thì hàng và cột tương ứng chứa nó cũng phải
+        \item nhận giá trị $1$:
+        \begin{equation}\label{eq:product_mapping}
+            X_k \to (r_u \land c_v) \equiv (\neg X_k \lor r_u) \land (\neg X_k \lor c_v)
+        \end{equation}
+
+        \item \textbf{Ràng buộc trên trục:} Ràng buộc AMO bằng kỹ thuật Pairwise truyền thống nay được áp đặt độc lập
+        \item lên tập biến hàng $\{r_1, \dots, r_p\}$ và tập biến cột $\{c_1, \dots, c_q\}$. Bằng cách ép tối đa một
+        \item hàng và một cột được phép mang giá trị $1$, tổng số lượng mệnh đề cấm sinh ra được giảm mạnh xuống mức
+        $\mathcal{O}(n)$ \cite{ref_3}.
+    \end{itemize}
+
+    \bibliographystyle{model1-num-names}
+    \bibliography{cas-refs}
+
 
 \end{document}

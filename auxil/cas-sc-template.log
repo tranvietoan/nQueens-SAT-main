@@ -1,13 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  2 OCT 2026 23:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  5 OCT 2026 09:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"D:/K1_2026_2027/Các vấn đề hiện đại trong KHMT/nQueens-SAT-main/n
-Queens-SAT-main/Teamplate latex/cas-sc-teamplate.tex"
-
-(D:/K1_2026_2027/Các vấn đề hiện đại trong KHMT/nQueens-SAT-main/nQu
-eens-SAT-main/Teamplate latex/cas-sc-teamplate.tex
+**./cas-sc-template.tex
+(cas-sc-template.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (cas-sc.cls
@@ -994,12 +991,17 @@ ine 432.
 )
 Package babel Info: Making " an active character on input line 147.
 ))
-(D:/K1_2026_2027\Các vấn đề hiện đại trong KHMT\nQueens-SAT-main\nQu
-eens-SAT-main\out\cas-sc-teamplate.aux
+
+LaTeX Warning: Unused global option(s):
+    [numbers].
+
+
+(D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
+in/auxil\cas-sc-template.aux
 Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
 (babel)             Reported on input line 8.
 )
-\openout1 = `cas-sc-teamplate.aux'.
+\openout1 = `cas-sc-template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
@@ -1022,15 +1024,13 @@ LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 9.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
 9.
-
-(E:\Milktex\New folder\tex/latex/stix\ls1stix.fd
+ (E:\Milktex\New folder\tex/latex/stix\ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 9.
 LaTeX Font Info:    Trying to load font information for LS2+stix on input line 
 9.
-
 (E:\Milktex\New folder\tex/latex/stix\ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
@@ -1071,17 +1071,15 @@ LaTeX Info: Command `\dddot' is already robust on input line 9.
 LaTeX Info: Command `\ddddot' is already robust on input line 9.
 Package hyperref Info: Link coloring ON on input line 9.
 
-(D:/K1_2026_2027\Các vấn đề hiện đại trong KHMT\nQueens-SAT-main\nQu
-eens-SAT-main\out\cas-sc-teamplate.out)
-(D:/K1_2026_2027\Các vấn đề hiện đại trong KHMT\nQueens-SAT-main\nQu
-eens-SAT-main\out\cas-sc-teamplate.out)
+(D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
+in/auxil\cas-sc-template.out)
+(D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
+in/auxil\cas-sc-template.out)
 \@outlinefile=\write3
-\openout3 = `cas-sc-teamplate.out'.
+\openout3 = `cas-sc-template.out'.
 
 
-D:/K1_2026_2027/Các vấn đề hiện đại trong KHMT/nQueens-SAT-main/nQue
-ens-SAT-main/Teamplate latex/cas-sc-teamplate.tex:9: Undefined control sequence
-.
+cas-sc-template.tex:9: Undefined control sequence.
 \__hook begindocument ...idth =\textwidth \bibsep 
                                                   =0pt\gdef \bibfont {\fonts...
 l.9 \begin{document}
@@ -1127,67 +1125,67 @@ and I'll forget about whatever was undefined.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \verbatim@out=\write4
-\openout4 = `cas-sc-teamplate.abs'.
+\openout4 = `cas-sc-template.abs'.
 
 LaTeX Font Info:    Trying to load font information for T5+cmss on input line 2
-8.
+7.
 (E:\Milktex\New folder\tex/latex/vntex\t5cmss.fd
 File: t5cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 28.
+ne 27.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 28.
+e 27.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
 
 
 (E:\Milktex\New folder\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
 
 
 (E:\Milktex\New folder\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 28.
+ine 27.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 28.
+e 27.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 28.
+ne 27.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 28.
+e 27.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 28.
+e 27.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
@@ -1195,36 +1193,37 @@ File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 )
 
 LaTeX Font Warning: Font shape `T5/stix/m/it' undefined
-(Font)              using `T5/stix/m/n' instead on input line 28.
+(Font)              using `T5/stix/m/n' instead on input line 27.
 
 [1{C:/Users/Lenovo LOQ/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
-(D:/K1_2026_2027\Các vấn đề hiện đại trong KHMT\nQueens-SAT-main\nQu
-eens-SAT-main\out\cas-sc-teamplate.abs)
+(D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
+in/auxil\cas-sc-template.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 28.
+Package hyperref Warning: Ignoring empty anchor on input line 27.
 
 
 LaTeX Font Warning: Font shape `T5/stix/m/sc' undefined
-(Font)              using `T5/stix/m/n' instead on input line 28.
+(Font)              using `T5/stix/m/n' instead on input line 27.
 
 
 LaTeX Font Warning: Font shape `T5/stix/b/n' undefined
-(Font)              using `T5/stix/m/n' instead on input line 31.
+(Font)              using `T5/stix/m/n' instead on input line 30.
 
 [2]
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-78.
+77.
  (E:\Milktex\New folder\tex/latex/stix\ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 ) [3{E:/Milktex/New folder/fonts/enc/dvips/stix/stix-ts1.enc}]
-(D:/K1_2026_2027\Các vấn đề hiện đại trong KHMT\nQueens-SAT-main\nQu
-eens-SAT-main\out\cas-sc-teamplate.aux
+(D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
+in/auxil\cas-sc-template.bbl) [4]
+(D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
+in/auxil\cas-sc-template.aux
 LaTeX Font Info:    Trying to load font information for T1+stix on input line 8
 .
-
-(E:\Milktex\New folder\tex/latex/stix\t1stix.fd
+ (E:\Milktex\New folder\tex/latex/stix\t1stix.fd
 File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
 ))
  ***********
@@ -1235,26 +1234,17 @@ L3 programming layer <2025-12-24>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `cas-sc-teamplate.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `cas-sc-teamplate.out':
-(rerunfilecheck)             Before: 95D8B6AD011C33B09A325E55F46C0F24;1153
-(rerunfilecheck)             After:  224E75A73CEDDE09CDBDAFA0F9ED23CF;1466.
+Package rerunfilecheck Info: File `cas-sc-template.out' has not changed.
+(rerunfilecheck)             Checksum: 6611B29D85BF58FA75473C66A6098AFD;1769.
  ) 
 Here is how much of TeX's memory you used:
- 17624 strings out of 467871
- 266251 string characters out of 5429388
- 680038 words of memory out of 5000000
- 46190 multiletter control sequences out of 15000+600000
+ 17663 strings out of 467871
+ 266507 string characters out of 5429388
+ 682590 words of memory out of 5000000
+ 46221 multiletter control sequences out of 15000+600000
  683298 words of font info for 138 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,12n,98p,479b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,98p,370b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <E:/Milktex/New folder/fonts/type1/public/stix/STIXGeneral-Regular.pfb><E:/Mi
 lktex/New folder/fonts/type1/public/stix/stix-mathcal.pfb><E:/Milktex/New folde
 r/fonts/type1/public/stix/stix-mathex.pfb><E:/Milktex/New folder/fonts/type1/pu
@@ -1265,11 +1255,10 @@ ype1/vntex/vnr/vnr12.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr17.pfb
 ><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr6.pfb><E:/Milktex/New folder/f
 onts/type1/vntex/vnr/vnr8.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr9
 .pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnss9.pfb>
-Output written on "D:/K1_2026_2027\Các vấn đề hiện đại trong KHMT\nQ
-ueens-SAT-main\nQueens-SAT-main\out\cas-sc-teamplate.pdf" (3 pages, 193523 byte
-s).
+Output written on D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-ma
+in\nQueens-SAT-main\auxil\cas-sc-template.pdf (4 pages, 203310 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 143 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 

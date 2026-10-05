@@ -2,7 +2,6 @@ Bài báo này trình bày phương pháp giải bài toán N-Queens bằng các
         đề (SAT) thông qua thư viện PySAT. Trọng tâm của nghiên cứu là thiết kế và đánh giá các kỹ thuật mã hóa
         (encoding) để biểu diễn ràng buộc ``tối đa một'' (At-Most-One - AMO) và ``ít nhất một'' (At-Least-One - ALO).
         Chúng tôi triển khai phương pháp mã hóa Sequential Counter và Commander nhằm giảm thiểu số lượng mệnh đề sinh ra
-        so với phương
-        pháp Pairwise truyền thống. Kết quả của cấu hình SAT sẽ được thiết kế để đối chiếu thực nghiệm với các bộ giải
-        chính xác (ILP, CP) như Cplex, Gurobi và CP-SAT trên các ma trận kích thước lớn.
+        so với phương pháp Pairwise truyền thống. Kết quả của cấu hình SAT sẽ được thiết kế để đối chiếu thực nghiệm với
+        các bộ giải chính xác (ILP, CP) như Cplex, Gurobi và CP-SAT trên các ma trận kích thước lớn.
     

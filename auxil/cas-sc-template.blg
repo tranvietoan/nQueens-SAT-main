@@ -1,49 +1,49 @@
 This is BibTeX, Version 0.99e
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: cas-sc-teamplate.aux
+The top-level auxiliary file: cas-sc-template.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
-The style file: cas-model2-names.bst
+The style file: model1-num-names.bst
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 Database file #1: cas-refs.bib
 Reallocating 'singl_function' (item size: 4) to 100 items.
 You've used 3 entries,
-            2990 wiz_defined-function locations,
-            757 strings with 6703 characters,
-and the built_in function-call counts, 1896 in all, are:
-= -- 143
-> -- 54
-< -- 2
-+ -- 21
+            2910 wiz_defined-function locations,
+            643 strings with 5638 characters,
+and the built_in function-call counts, 2171 in all, are:
+= -- 174
+> -- 57
+< -- 5
++ -- 23
 - -- 18
-* -- 195
-:= -- 279
-add.period$ -- 9
+* -- 224
+:= -- 288
+add.period$ -- 3
 call.type$ -- 3
 change.case$ -- 21
 chr.to.int$ -- 3
 cite$ -- 3
-duplicate$ -- 145
-empty$ -- 151
-format.name$ -- 27
-if$ -- 352
+duplicate$ -- 163
+empty$ -- 173
+format.name$ -- 33
+if$ -- 425
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 27
 newline$ -- 30
 num.names$ -- 12
-pop$ -- 49
+pop$ -- 50
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 21
 quote$ -- 0
-skip$ -- 41
+skip$ -- 64
 stack$ -- 0
-substring$ -- 96
-swap$ -- 99
-text.length$ -- 0
+substring$ -- 127
+swap$ -- 118
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 27
 warning$ -- 0
-while$ -- 12
+while$ -- 17
 width$ -- 0
-write$ -- 56
+write$ -- 57

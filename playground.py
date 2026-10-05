@@ -4,7 +4,8 @@ from pysat.solvers import Glucose3
 from binomial import binomial_amo
 from sequential import SequentialEncoder
 from commander import CommanderEncoder
-N=500
+from product import ProductEncoder
+N=25
 
 def var(r, c):
  return r*N+c+1
@@ -18,9 +19,17 @@ bin_clauses = binomial_amo(sample_row_vars)
 seq_encoder = SequentialEncoder(N * N + 1)
 seq_clauses = seq_encoder.encode_amo(sample_row_vars)
 
+cmd_encoder = CommanderEncoder(N * N + 1, group_size=3)
+cmd_clauses = cmd_encoder.encode_amo(sample_row_vars)
+
+prod_encoder = ProductEncoder(N * N + 1)
+prod_clauses = prod_encoder.encode_amo(sample_row_vars)
+
 print(f"--- SO SÁNH KÍCH THƯỚC CHO 1 HÀNG/CỘT (N={N}) ---")
 print(f"Binomial (Pairwise) sinh ra : {len(bin_clauses)} clauses")
 print(f"Sequential Counter sinh ra  : {len(seq_clauses)} clauses")
+print(f"Commander (Nhóm 3) sinh ra  : {len(cmd_clauses)} clauses")
+print(f"Product Encoding sinh ra    : {len(prod_clauses)} clauses")
 print("-" * 55)
 
 start_time = time.time()
@@ -28,7 +37,7 @@ solver = Glucose3()
 
 total_clauses_added = 0
 # Khởi tạo Commander với group_size=3
-active_encoder = CommanderEncoder(N * N + 1, group_size=3)
+active_encoder = ProductEncoder(N*N+1)
 for i in range(N):
     # Đánh số cho từng ô
     row_vars = [var(i,j) for j in range(N)]
