@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  5 OCT 2026 22:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  7 OCT 2026 00:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -994,19 +994,21 @@ ine 432.
 )
 Package babel Info: Making " an active character on input line 147.
 ))
+(E:\Milktex\New folder\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip71
+\bibsep=\skip72
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count355
+)
 (E:\Milktex\New folder\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count355
+\c@float@type=\count356
 \float@exts=\toks35
 \float@box=\box66
 \@float@everytoks=\toks36
 \@floatcapt=\box67
 )
-
-LaTeX Warning: Unused global option(s):
-    [numbers].
-
-
 (D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-ma
 in\out\cas-sc-template.aux
 Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
@@ -1014,54 +1016,54 @@ Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
 )
 \openout1 = `cas-sc-template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 11.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
-10.
+11.
  (E:\Milktex\New folder\tex/latex/stix\ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 11.
 LaTeX Font Info:    Trying to load font information for LS2+stix on input line 
-10.
+11.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 
 (E:\Milktex\New folder\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count356
+\scratchcounter=\count357
 \scratchdimen=\dimen272
 \scratchbox=\box68
-\nofMPsegments=\count357
-\nofMParguments=\count358
+\nofMPsegments=\count358
+\nofMParguments=\count359
 \everyMPshowfont=\toks37
-\MPscratchCnt=\count359
+\MPscratchCnt=\count360
 \MPscratchDim=\dimen273
-\MPnumerator=\count360
-\makeMPintoPDFobject=\count361
+\MPnumerator=\count361
+\makeMPintoPDFobject=\count362
 \everyMPtoPDFconversion=\toks38
 ) (E:\Milktex\New folder\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1071,9 +1073,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (E:\Milktex\New folder\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 10.
-LaTeX Info: Command `\ddddot' is already robust on input line 10.
-Package hyperref Info: Link coloring ON on input line 10.
+LaTeX Info: Command `\dddot' is already robust on input line 11.
+LaTeX Info: Command `\ddddot' is already robust on input line 11.
+Package hyperref Info: Link coloring ON on input line 11.
 
 (D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-ma
 in\out\cas-sc-template.out)
@@ -1082,18 +1084,6 @@ in\out\cas-sc-template.out)
 \@outlinefile=\write3
 \openout3 = `cas-sc-template.out'.
 
-
-D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-mai
-n/Template_latex/cas-sc-template.tex:10: Undefined control sequence.
-\__hook begindocument ...idth =\textwidth \bibsep 
-                                                  =0pt\gdef \bibfont {\fonts...
-l.10 \begin{document}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1132,65 +1122,59 @@ and I'll forget about whatever was undefined.
 \verbatim@out=\write4
 \openout4 = `cas-sc-template.abs'.
 
-LaTeX Font Info:    Trying to load font information for T5+cmss on input line 2
-8.
-(E:\Milktex\New folder\tex/latex/vntex\t5cmss.fd
-File: t5cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 28.
-
+ne 29.
 (E:\Milktex\New folder\tex/latex/stix\ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 28.
+e 29.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
 
 
 (E:\Milktex\New folder\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
 
 
 (E:\Milktex\New folder\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 28.
+ine 29.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 28.
+e 29.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 28.
+ne 29.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 28.
+e 29.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 28.
+e 29.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
@@ -1198,76 +1182,100 @@ File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 )
 
 LaTeX Font Warning: Font shape `T5/stix/m/it' undefined
-(Font)              using `T5/stix/m/n' instead on input line 28.
+(Font)              using `T5/stix/m/n' instead on input line 29.
 
-[1{C:/Users/Lenovo LOQ/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
-]
 (D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-ma
 in\out\cas-sc-template.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 28.
+Package hyperref Warning: Ignoring empty anchor on input line 29.
 
 
 LaTeX Font Warning: Font shape `T5/stix/m/sc' undefined
-(Font)              using `T5/stix/m/n' instead on input line 28.
+(Font)              using `T5/stix/m/n' instead on input line 29.
 
 
 LaTeX Font Warning: Font shape `T5/stix/b/n' undefined
-(Font)              using `T5/stix/m/n' instead on input line 31.
+(Font)              using `T5/stix/m/n' instead on input line 32.
 
-[2]
+LaTeX Font Info:    Trying to load font information for T5+cmss on input line 7
+7.
+(E:\Milktex\New folder\tex/latex/vntex\t5cmss.fd
+File: t5cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [1
+
+{C:/Users/Lenovo LOQ/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-78.
- (E:\Milktex\New folder\tex/latex/stix\ts1stix.fd
+79.
+
+(E:\Milktex\New folder\tex/latex/stix\ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 )
 
-LaTeX Warning: Citation `ref_13' on page 3 undefined on input line 104.
+Package natbib Warning: Citation `ref_13' on page 2 undefined on input line 105
+.
 
 
-LaTeX Warning: Citation `ref_2' on page 3 undefined on input line 130.
+Package natbib Warning: Citation `ref_2' on page 2 undefined on input line 131.
 
 
-LaTeX Warning: Citation `ref_3' on page 3 undefined on input line 131.
+
+Package natbib Warning: Citation `ref_3' on page 2 undefined on input line 132.
 
 
-LaTeX Warning: Citation `ref_2' on page 3 undefined on input line 135.
 
-[3{E:/Milktex/New folder/fonts/enc/dvips/stix/stix-ts1.enc}]
-
-LaTeX Warning: Citation `ref_3' on page 4 undefined on input line 137.
+Package natbib Warning: Citation `ref_2' on page 2 undefined on input line 137.
 
 
-LaTeX Warning: Citation `ref_2' on page 4 undefined on input line 138.
+
+Package natbib Warning: Citation `ref_3' on page 2 undefined on input line 140.
 
 
-LaTeX Warning: Citation `ref_3' on page 4 undefined on input line 148.
+[2{E:/Milktex/New folder/fonts/enc/dvips/stix/stix-ts1.enc}]
 
-[4]
+Package natbib Warning: Citation `ref_2' on page 3 undefined on input line 141.
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `') on input line 205.
 
-<clause_comparison.png, id=92, 616.2222pt x 400.1349pt>
-File: clause_comparison.png Graphic file (type png)
-<use clause_comparison.png>
-Package pdftex.def Info: clause_comparison.png  used on input line 207.
-(pdftex.def)             Requested size: 374.66734pt x 243.28209pt.
+
+Package natbib Warning: Citation `ref_3' on page 3 undefined on input line 151.
+
+
+
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 162.
+
+
+
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 162.
+
+
+
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 164.
+
+
+
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 167.
+
+
+
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 172.
+
+
+
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 178.
+
+
+[3]
 No file cas-sc-template.bbl.
-[5
+
+Package natbib Warning: There were undefined citations.
+
+[4
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.229 \end{document}
-                    ] [6
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.229 \end{document}
-                     <./clause_comparison.png>]
+l.246 \end{document}
+                    ]
 (D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-ma
 in\out\cas-sc-template.aux
 LaTeX Font Info:    Trying to load font information for T1+stix on input line 8
@@ -1284,19 +1292,19 @@ L3 programming layer <2025-12-24>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `cas-sc-template.out' has not changed.
 (rerunfilecheck)             Checksum: 1606161B21591A2841F9CF8D4B8CE792;3342.
  ) 
 Here is how much of TeX's memory you used:
- 17722 strings out of 467871
- 267289 string characters out of 5429388
- 683810 words of memory out of 5000000
- 46274 multiletter control sequences out of 15000+600000
+ 18033 strings out of 467871
+ 271016 string characters out of 5429388
+ 692883 words of memory out of 5000000
+ 46584 multiletter control sequences out of 15000+600000
  691078 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,12n,98p,849b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,98p,532b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <E:/Milktex/New folder/fonts/type1/public/stix/STIXGeneral-Regular.pfb><E:/Mi
 lktex/New folder/fonts/type1/public/stix/stix-mathcal.pfb><E:/Milktex/New folde
 r/fonts/type1/public/stix/stix-mathex.pfb><E:/Milktex/New folder/fonts/type1/pu
@@ -1309,9 +1317,9 @@ onts/type1/vntex/vnr/vnr8.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr9
 .pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnss9.pfb><E:/Milktex/New fol
 der/fonts/type1/vntex/vnr/vnssbx10.pfb>
 Output written on D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-ma
-in\nQueens-SAT-main\out\cas-sc-template.pdf (6 pages, 422924 bytes).
+in\nQueens-SAT-main\out\cas-sc-template.pdf (4 pages, 226864 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
