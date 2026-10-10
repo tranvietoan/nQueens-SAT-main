@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  7 OCT 2026 00:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  10 OCT 2026 12:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1207,14 +1207,26 @@ LaTeX Font Info:    Trying to load font information for TS1+stix on input line
 (E:\Milktex\New folder\tex/latex/stix\ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 ) [2{E:/Milktex/New folder/fonts/enc/dvips/stix/stix-ts1.enc}] [3]
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 2
+57.
+
+(E:\Milktex\New folder\tex/latex/vntex\t5cmtt.fd
+File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
 (D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
-in/auxil\cas-sc-template.bbl) [4
+in/auxil\cas-sc-template.bbl [4
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.253 \end{document}
-                    ]
+l.25 \bibitem[{Smith and Doe(2018)}]{ref_2}
+                                           
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.25 \bibitem[{Smith and Doe(2018)}]{ref_2}
+                                           ]) [5]
 (D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
 in/auxil\cas-sc-template.aux
 LaTeX Font Info:    Trying to load font information for T1+stix on input line 8
@@ -1231,16 +1243,16 @@ L3 programming layer <2025-12-24>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `cas-sc-template.out' has not changed.
-(rerunfilecheck)             Checksum: 1606161B21591A2841F9CF8D4B8CE792;3342.
+(rerunfilecheck)             Checksum: CF4582DFCCC3283A0291B74DB6D7959F;3478.
  ) 
 Here is how much of TeX's memory you used:
- 18071 strings out of 467871
- 271507 string characters out of 5429388
- 693875 words of memory out of 5000000
- 46616 multiletter control sequences out of 15000+600000
- 691078 words of font info for 153 fonts, out of 8000000 for 9000
+ 18100 strings out of 467871
+ 271959 string characters out of 5429388
+ 694074 words of memory out of 5000000
+ 46638 multiletter control sequences out of 15000+600000
+ 691389 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,12n,98p,438b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,98p,490b,610s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <E:/Milktex/New folder/fonts/type1/public/stix/STIXGeneral-Regular.pfb><E:/Mi
 lktex/New folder/fonts/type1/public/stix/stix-mathcal.pfb><E:/Milktex/New folde
 r/fonts/type1/public/stix/stix-mathex.pfb><E:/Milktex/New folder/fonts/type1/pu
@@ -1251,11 +1263,12 @@ ype1/vntex/vnr/vnr12.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr17.pfb
 ><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr6.pfb><E:/Milktex/New folder/f
 onts/type1/vntex/vnr/vnr8.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr9
 .pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnss9.pfb><E:/Milktex/New fol
-der/fonts/type1/vntex/vnr/vnssbx10.pfb>
+der/fonts/type1/vntex/vnr/vnssbx10.pfb><E:/Milktex/New folder/fonts/type1/vntex
+/vnr/vntt10.pfb>
 Output written on D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-ma
-in\nQueens-SAT-main\auxil\cas-sc-template.pdf (4 pages, 234253 bytes).
+in\nQueens-SAT-main\auxil\cas-sc-template.pdf (5 pages, 248479 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
+ 195 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
  97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

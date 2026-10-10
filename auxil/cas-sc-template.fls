@@ -363,6 +363,10 @@ INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathcal.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathsf.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathsfit.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathtt.tfm
+INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmtt.fd
+INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmtt.fd
+INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmtt.fd
+INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vntt10.tfm
 INPUT D:\K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-main\auxil\cas-sc-template.bbl
 INPUT D:\K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-main\auxil\cas-sc-template.bbl
 INPUT D:\K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-main\auxil\cas-sc-template.bbl
@@ -401,3 +405,5 @@ INPUT E:\Milktex\New folder\fonts\type1\vntex\vnr\vnss9.pfb
 INPUT E:\Milktex\New folder\fonts\type1\vntex\vnr\vnss9.pfb
 INPUT E:\Milktex\New folder\fonts\type1\vntex\vnr\vnssbx10.pfb
 INPUT E:\Milktex\New folder\fonts\type1\vntex\vnr\vnssbx10.pfb
+INPUT E:\Milktex\New folder\fonts\type1\vntex\vnr\vntt10.pfb
+INPUT E:\Milktex\New folder\fonts\type1\vntex\vnr\vntt10.pfb

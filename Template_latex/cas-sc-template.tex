@@ -220,32 +220,55 @@
     trì sự gia tăng tuyến tính rất ổn định (chỉ khoảng hơn $1,400$ mệnh đề ở $N=500$
     ), chứng minh tính hiệu quả vượt trội trong việc tiết kiệm không gian lưu trữ.
 
-    \subsection{Đánh giá Thời gian Giải (Solver Runtime)}\label{subsec:time_eval}
+    \subsection{Đánh giá Thời gian Giải: Đối chứng SAT với Bộ giải Chính xác}\label{subsec:time_eval}
     Sử dụng \textbf{Product Encoding}
-    làm thuật toán cốt lõi để đưa vào bộ giải Glucose3, kết quả đo lường tổng thể toàn bàn cờ thu được như sau:
+    làm thuật toán cốt lõi cho bộ giải logic mệnh đề (Glucose3)\cite{ref_11}, chúng tôi tiến hành đối chứng thực
+    nghiệm với
+    hai trường phái giải chính xác (Exact Solvers) hàng đầu hiện nay: \textbf{CP-SAT} (đại diện cho Lập trình Ràng buộc)
+    và \textbf{Gurobi} (đại diện cho Lập trình Nguyên thủy - MIP). Thời gian tìm kiếm nghiệm ($t_{search}$
+    ) trên toàn bộ bàn cờ được ghi nhận tại Bảng \ref{tab:time_eval}.
+
+    \begin{table}[H]
+        \centering
+        \caption{So sánh thời gian tìm kiếm  giữa PySAT (Glucose3), CP-SAT và Gurobi}
+        \begin{tabular}{|l|c|c|c|}
+            \hline
+            \textbf{Bộ giải (Solver)} & \textbf{$N = 50$} & \textbf{$N = 100$} & \textbf{$N = 500$} \\
+            \hline
+            PySAT (Glucose3)          & 5.8789s            & 0.1833s             & Timeout / Quá tải  \\
+            \hline
+            OR-Tools (CP-SAT)         & 0.1745s            & 0.8297s             & 601.3171s           \\
+            \hline
+            Gurobi MIP                & 0.0970s            & 0.0031s             & 0.1038s             \\
+            \hline
+        \end{tabular}
+        \label{tab:time_eval}
+    \end{table}
+
+    \textbf{Phân tích đặc tính Search và Bàn luận:}
     \begin{itemize}
-        \item \textbf{Cấu hình $N = 50$:} Tổng mệnh đề nạp vào solver là $57,220$ clauses. Thời gian tìm thấy nghiệm là
-        $5.8789$ giây.
-        \item \textbf{Cấu hình $N = 100$:} Tổng mệnh đề nạp vào solver là $269,000$
-        clauses. Thời gian tìm thấy nghiệm là $0.1833$ giây.
-        \item \textbf{Cấu hình $N = 500$:} Tổng số mệnh đề nạp vào solver lên tới mức khổng lồ $8,825,192$ clauses.
+        \item \textbf{Phương pháp SAT Solving (Glucose3):}
+        Thời gian giải không hoàn toàn phụ thuộc tuyến tính vào số lượng biến mà phụ thuộc vào cấu trúc đồ thị lan
+        truyền xung đột (implication graph). Việc cấu hình $N=100$ giải cực nhanh (0.1833s) nhưng $N=50$
+        lại chậm hơn (5.8789s)\cite{ref_11} cho thấy bộ giải đã ngẫu nhiên chạm vào các nhánh cắt tỉa sớm. Tuy nhiên, ở
+        $N=500$ với hơn 8.8 triệu mệnh đề\cite{ref_11}, hệ thống bị quá tải bộ nhớ.
+        \item \textbf{Phương pháp CP-SAT:} Thể hiện sự ổn định tuyệt đối ở các cấu hình vừa ($N=50, 100$
+        ). Nhờ giữ nguyên cấu trúc toán học bằng $N$
+        biến nguyên và sử dụng thuật toán đồ thị luồng qua ràng buộc toàn cục \texttt{AllDifferent}
+        , CP-SAT triệt tiêu nhánh vô nghiệm tức thời. Tuy nhiên, ở $N=500$
+        , giới hạn của việc duy trì sự nhất quán miền (domain consistency) bắt đầu bộc lộ khiến thời gian tăng lên 601
+        giây.
+        \item \textbf{Phương pháp Gurobi MIP:}
+        Thể hiện sức mạnh áp đảo. Việc chuyển đổi các ràng buộc AMO thành phương trình đại số tuyến tính kết hợp với kỹ
+        thuật nới lỏng (LP relaxation) và tự động phát hiện clique (clique presolve) của Gurobi đã biến N-Queens thành
+        một bài toán rất dễ giải quyết, tìm ra nghiệm $N=500$ chỉ trong 0.1038 giây.
     \end{itemize}
 
-    \textbf{Phân tích đặc tính Search của SAT:}
-    Hiện tượng cấu hình $N=100$ giải mã nhanh hơn đáng kể so với $N=50$ (chỉ tốn $0.18$ giây so với $5.87$
-    giây) là một đặc tính thực nghiệm điển hình của các bộ giải SAT dựa trên cơ chế CDCL (Conflict-Driven Clause
-    Learning). Thời gian giải của SAT Solver không hoàn toàn phụ thuộc tuyến tính vào số lượng biến, mà phụ thuộc vào
-    cấu trúc lan truyền (implication graph) và khả năng học xung đột. Với $N=100$
-    , bộ giải ngẫu nhiên chạm được vào các nhánh cắt tỉa đồ thị sớm hơn, từ đó lập tức nhảy vọt đến nghiệm hợp lệ mà
-    không cần duyệt sâu như ở $N=50$.
-
-
- \textbf{Kết quả thực nghiệm trên CP-SAT:}
-    \begin{itemize}
-        \item Kích thước $N = 50$: Nghiệm được tìm thấy trong \textbf{0.1745} giây.
-        \item Kích thước $N = 100$: Nghiệm được tìm thấy trong \textbf{0.8297} giây.
-        \item Kích thước $N = 500$: Nghiệm được tìm thấy trong \textbf{601.3171} giây.
-    \end{itemize}
+    Dù các hệ thống MIP và CP cho thấy hiệu năng vượt trội với các bài toán có tính đại số hoặc hoán vị toàn cục như
+    N-Queens, việc nghiên cứu SAT Encoding vẫn giữ nguyên giá trị cốt lõi. Trong thực tế, các kiến trúc mã hóa (Product,
+    Sequential, Commander) là nền tảng bắt buộc khi mô hình cần được nhúng vào các hệ thống phần cứng số (Hardware
+    Verification) hoặc các bộ giải SMT (Satisfiability Modulo Theories), nơi các ràng buộc chỉ có thể được biểu diễn
+    dưới dạng logic mệnh đề.
 
 
     \bibliographystyle{model1-num-names}
