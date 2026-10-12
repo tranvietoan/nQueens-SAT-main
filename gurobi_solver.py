@@ -6,6 +6,8 @@ from gurobipy import GRB
 def solve_nqueens_gurobi(N):
     print(f"\n--- Giải {N}-Queens bằng Gurobi MIP ---")
 
+    start_build = time.time()
+
     m = gp.Model(f"nqueens_{N}")
     m.setParam('OutputFlag', 0)
     m.setParam('TimeLimit', 3600)
@@ -21,13 +23,26 @@ def solve_nqueens_gurobi(N):
     for d in range(2 * N - 1):
         m.addConstr(gp.quicksum(x[i, d - i] for i in range(N) if 0 <= d - i < N) <= 1, name=f"diag2_{d}")
 
-    # Thời gian
-    start_time = time.time()
+    m.update()
+
+    #Kết thúc thời gian Build
+    build_time = time.time() - start_build
+
+    nv = m.NumVars
+    nc = m.NumConstrs
+    # Đo thời gian
+    start_search= time.time()
     m.optimize()
-    solve_time = time.time() - start_time
+    search_time = time.time() - start_search
+
+    print("-" * 40)
+    print(f"Số lượng biến (nv)                 : {nv}")
+    print(f"Số lượng phương trình (nc)         : {nc}")
+    print(f"Thời gian Build Model (t_build)    : {build_time:.4f} giây")
+    print(f"Thời gian Search Solver (t_search) : {search_time:.4f} giây")
 
     if m.status == GRB.OPTIMAL:
-        print(f"Tìm thấy nghiệm trong {solve_time:.4f} giây!")
+        print(f"Tìm thấy nghiệm trong {search_time:.4f} giây!")
     else:
         print("Không tìm thấy nghiệm hoặc vượt quá giới hạn thời gian/biến.")
 

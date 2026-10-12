@@ -3,16 +3,19 @@
 \usepackage[T5]{fontenc}
 \usepackage[vietnamese]{babel}
 \usepackage[numbers]{natbib}
-
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{float}
+
+
 
 \begin{document}
     \shorttitle{Biểu diễn SAT cho bài toán N-Queens}
     \shortauthors{Trần Việt Toàn}
 
-    \title[mode=title]{Biểu diễn SAT tối ưu cho bài toán N-Queens: Đánh giá thực nghiệm các phương pháp mã hóa}
+    \title[mode=title]{
+\bfseries
+{Biểu diễn SAT tối ưu cho bài toán N-Queens: Đánh giá thực nghiệm các phương pháp mã hóa.}}
 
     \author[1]{Trần Việt Toàn}
     \address[1]{Trường Đại học Công nghệ - ĐHQGHN}
@@ -29,7 +32,7 @@
     \maketitle
 
 
-    \section{Giới thiệu}\label{sec:intro}
+    \section{{Giới thiệu}}\label{sec:intro}
     N-Queens là một bài toán tối ưu tổ hợp kinh điển, yêu cầu đặt $N$ quân Hậu lên bàn cờ $N \times N$ sao cho không
     có bất kỳ hai quân Hậu nào tấn công nhau. Để giải quyết bài toán này trên quy mô lớn ($N = 50, 100, 500$
     ), việc sử dụng
@@ -183,93 +186,140 @@
     \subsection{Môi trường và Phương pháp đo lường}\label{subsec:env}
     Thực nghiệm được lập trình bằng ngôn ngữ Python, tích hợp bộ giải \textit{Glucose3}
     từ thư viện PySAT. Để đánh giá khả năng mở rộng (scalability), chúng tôi tiến hành chạy thuật toán trên các ma trận
-    $N \times N$ với kích thước lớn dần: $N = 50, 100, 500$.
+    $N \times N$ với kích thước lớn dần: $N = 50, 100, 500$\cite{ref_2}.
 
-    Ma trận thiết kế thực nghiệm ghi nhận các thông số cốt lõi: số lượng biến phụ ($n_v$
-    ), số lượng mệnh đề cấm sinh ra ($n_c$), và thời gian tìm kiếm của solver ($t_{search}$).
+    Theo đúng chuẩn thiết kế thực nghiệm, chúng tôi cài đặt thêm các thư viện giải chính xác (exact solvers) để đối
+    chứng trực tiếp với phương pháp SAT Solving, bao gồm \textbf{Gurobi} (đại diện cho MIP) và
+    \textbf{CP-SAT} (đại diện cho Lập trình ràng buộc)\cite{ref_2}
+    . Ma trận thiết kế thực nghiệm ghi nhận độc lập 4 thông số cốt lõi: số lượng biến ($n_v$
+    ), số lượng ràng buộc/mệnh đề ($n_c$), thời gian xây dựng mô hình ($t_{build}$), và thời gian tìm kiếm của solver (
+    $t_{search}$)\cite{ref_2}.
 
-    \subsection{Đánh giá Kích thước Không gian Mệnh đề (Clause Size)}\label{subsec:size_eval}
-    Bảng \ref{tab:clause_size} trình bày số lượng mệnh đề được sinh ra khi áp đặt ràng buộc AMO cho
-    \textbf{một hàng/cột} bằng các phương pháp mã hóa khác nhau.
-
-    \begin{table}[H]
-        \centering
-        \caption{So sánh số lượng mệnh đề AMO sinh ra cho 1 hàng/cột ở các kích thước $N$}
-
-        \begin{tabular}{|l|c|c|c|}
-            \hline
-            \textbf{Phương pháp mã hóa} & \textbf{$N = 50$} & \textbf{$N = 100$} & \textbf{$N = 500$} \\
-            \hline
-            Binomial (Pairwise)         & 1,225             & 4,950              & 124,750            \\
-            \hline
-            Sequential Counter          & 146               & 296                & 1,496              \\
-            \hline
-            Product Encoding            & 149               & 290                & 1,484              \\
-            \hline
-            Commander Encoding (Nhóm 3) & 170               & 344                & 1,744              \\
-            \hline
-            Binary Encoding             & 300               & 700                & 4,500              \\
-            \hline
-        \end{tabular}
-        \label{tab:clause_size}
-    \end{table}
-
-    Kết quả từ Bảng \ref{tab:clause_size} minh minh họa rõ nét sự bùng nổ tổ hợp của phương pháp Binomial. Khi $N=500$
-    , phương pháp này sinh ra tới $124,750$
-    mệnh đề chỉ cho một đường duy nhất, tạo ra gánh nặng bộ nhớ khổng lồ. Ngược lại, Sequential và Product Encoding duy
-    trì sự gia tăng tuyến tính rất ổn định (chỉ khoảng hơn $1,400$ mệnh đề ở $N=500$
-    ), chứng minh tính hiệu quả vượt trội trong việc tiết kiệm không gian lưu trữ.
-
-    \subsection{Đánh giá Thời gian Giải: Đối chứng SAT với Bộ giải Chính xác}\label{subsec:time_eval}
-    Sử dụng \textbf{Product Encoding}
-    làm thuật toán cốt lõi cho bộ giải logic mệnh đề (Glucose3)\cite{ref_11}, chúng tôi tiến hành đối chứng thực
-    nghiệm với
-    hai trường phái giải chính xác (Exact Solvers) hàng đầu hiện nay: \textbf{CP-SAT} (đại diện cho Lập trình Ràng buộc)
-    và \textbf{Gurobi} (đại diện cho Lập trình Nguyên thủy - MIP). Thời gian tìm kiếm nghiệm ($t_{search}$
-    ) trên toàn bộ bàn cờ được ghi nhận tại Bảng \ref{tab:time_eval}.
+    \subsection{Đánh giá Hiệu năng Tổng thể (Design Matrix)}\label{subsec:full_eval}
+    Bảng \ref{tab:design_matrix} trình bày tổng hợp kết quả chạy thực nghiệm của tất cả 7 phương pháp trên các ma trận
+    $N = 50, 100, 500$. Đối với các phương pháp chia nhóm (Product, Binary), cấu hình nhóm $n \le 20$
+    được sử dụng làm đại diện minh họa. Những cấu hình vượt quá khả năng xử lý của bộ nhớ hoặc hết thời gian được đánh
+    dấu là OOM (Out of Memory) hoặc TL (Time Limit).
 
     \begin{table}[H]
         \centering
-        \caption{So sánh thời gian tìm kiếm  giữa PySAT (Glucose3), CP-SAT và Gurobi}
-        \begin{tabular}{|l|c|c|c|}
-            \hline
-            \textbf{Bộ giải (Solver)} & \textbf{$N = 50$} & \textbf{$N = 100$} & \textbf{$N = 500$} \\
-            \hline
-            PySAT (Glucose3)          & 5.8789s            & 0.1833s             & Timeout / Quá tải  \\
-            \hline
-            OR-Tools (CP-SAT)         & 0.1745s            & 0.8297s             & 601.3171s           \\
-            \hline
-            Gurobi MIP                & 0.0970s            & 0.0031s             & 0.1038s             \\
-            \hline
-        \end{tabular}
-        \label{tab:time_eval}
+        \caption{Ma trận thiết kế (Design Matrix) so sánh các phương pháp mã hóa SAT và Exact Solvers\cite{ref_3}}
+        \resizebox{\textwidth}{!}{
+
+
+            \begin{tabular}{|l|l|c|c|c|}
+                \hline
+                \textbf{Phương pháp} & \textbf{Thông số} & \textbf{$N=50$} & \textbf{$N=100$} &
+                \textbf{$N=500$} \\
+                \hline
+                \multirow{4}{*}{\textbf{1. CP-SAT}}
+                & Số lượng biến ($n_v$)      & 50       & 100       & 500               \\ \cline{2-5}
+                & Số lượng ràng buộc ($n_c$) & 3        & 3         & 3                 \\ \cline{2-5}
+                & $t_{build}$ (s)            & 0.0069   & 0.0011    & 0.0044            \\ \cline{2-5}
+                & $t_{search}$ (s)           & 0.2410   & 0.8997    & 558.9518          \\
+                \hline
+                \multirow{4}{*}{\textbf{2. Gurobi MIP}}
+                & Số lượng biến ($n_v$)      & 2,500    & 10,000    & 250,000           \\ \cline{2-5}
+                & Số phương trình ($n_c$)    & 298      & 598       & 2,998             \\ \cline{2-5}
+                & $t_{build}$ (s)            & 0.0290   & 0.0431    & 1.2460            \\ \cline{2-5}
+                & $t_{search}$ (s)           & 0.0815   & 0.0019    & 0.0560            \\
+                \hline
+                \multirow{4}{*}{\textbf{3. Binomial}}
+                & Số lượng biến ($n_v$)      & 2,500    & 10,000    & 250,000           \\ \cline{2-5}
+                & Số lượng mệnh đề ($n_c$)   & 203,450  & 1,646,900 & 207,834,500       \\ \cline{2-5}
+                & $t_{build}$ (s)            & 0.0602   & 0.5254    & 211.5343          \\ \cline{2-5}
+                & $t_{search}$ (s)           & 0.0036   & 0.0113    & 11.6443           \\
+                \hline
+                \multirow{4}{*}{\textbf{4. Sequential}}
+                & Số lượng biến ($n_v$)      & 12,202   & 49,402    & OOM (Tràn bộ nhớ) \\ \cline{2-5}
+                & Số lượng mệnh đề ($n_c$)   & 28,912   & 117,812   & -                 \\ \cline{2-5}
+                & $t_{build}$ (s)            & 0.0121   & 0.0457    & -                 \\ \cline{2-5}
+                & $t_{search}$ (s)           & 0.9990   & 240.8474  & -                 \\
+                \hline
+                \multirow{4}{*}{\textbf{5. Commander}}
+                & Số lượng biến ($n_v$)      & 7,354    & 29,502    & 749,140           \\ \cline{2-5}
+                & Số lượng mệnh đề ($n_c$)   & 33,420   & 136,560   & 3,483,620         \\ \cline{2-5}
+                & $t_{build}$ (s)            & 0.0158   & 0.0639    & 1.7210            \\ \cline{2-5}
+                & $t_{search}$ (s)           & 0.0868   & 0.0345    & 3.7768            \\
+                \hline
+                \multirow{4}{*}{\textbf{6. Product ($n \le 20$)}}
+                & Số lượng biến ($n_v$)      & TL       & 18,980    & 355,042           \\ \cline{2-5}
+                & Số lượng mệnh đề ($n_c$)   & -        & 119,640   & 2,972,268         \\ \cline{2-5}
+                & $t_{build}$ (s)            & -        & 0.0450    & 1.1449            \\ \cline{2-5}
+                & $t_{search}$ (s)           & -        & 0.2996    & 1.8833            \\
+                \hline
+                \multirow{4}{*}{\textbf{7. Binary ($n \le 20$)}}
+                & Số lượng biến ($n_v$)      & 3,760    & 13,402    & 274,662           \\ \cline{2-5}
+                & Số lượng mệnh đề ($n_c$)   & 59,108   & 270,888   & 8,827,080         \\ \cline{2-5}
+                & $t_{build}$ (s)            & 0.0238   & 0.1099    & 3.6819            \\ \cline{2-5}
+                & $t_{search}$ (s)           & 255.7419 & 0.0149    & 1.0141            \\
+                \hline
+
+            \end{tabular}
+        }
+        \label{tab:design_matrix}
     \end{table}
 
-    \textbf{Phân tích đặc tính Search và Bàn luận:}
+    \subsection{Bàn luận và Đánh giá}
+    Dựa trên kết quả từ Bảng \ref{tab:design_matrix}, chúng tôi rút ra các kết luận quan trọng sau:
+
     \begin{itemize}
-        \item \textbf{Phương pháp SAT Solving (Glucose3):}
-        Thời gian giải không hoàn toàn phụ thuộc tuyến tính vào số lượng biến mà phụ thuộc vào cấu trúc đồ thị lan
-        truyền xung đột (implication graph). Việc cấu hình $N=100$ giải cực nhanh (0.1833s) nhưng $N=50$
-        lại chậm hơn (5.8789s)\cite{ref_11} cho thấy bộ giải đã ngẫu nhiên chạm vào các nhánh cắt tỉa sớm. Tuy nhiên, ở
-        $N=500$ với hơn 8.8 triệu mệnh đề\cite{ref_11}, hệ thống bị quá tải bộ nhớ.
-        \item \textbf{Phương pháp CP-SAT:} Thể hiện sự ổn định tuyệt đối ở các cấu hình vừa ($N=50, 100$
-        ). Nhờ giữ nguyên cấu trúc toán học bằng $N$
-        biến nguyên và sử dụng thuật toán đồ thị luồng qua ràng buộc toàn cục \texttt{AllDifferent}
-        , CP-SAT triệt tiêu nhánh vô nghiệm tức thời. Tuy nhiên, ở $N=500$
-        , giới hạn của việc duy trì sự nhất quán miền (domain consistency) bắt đầu bộc lộ khiến thời gian tăng lên 601
-        giây.
-        \item \textbf{Phương pháp Gurobi MIP:}
-        Thể hiện sức mạnh áp đảo. Việc chuyển đổi các ràng buộc AMO thành phương trình đại số tuyến tính kết hợp với kỹ
-        thuật nới lỏng (LP relaxation) và tự động phát hiện clique (clique presolve) của Gurobi đã biến N-Queens thành
-        một bài toán rất dễ giải quyết, tìm ra nghiệm $N=500$ chỉ trong 0.1038 giây.
+        \item \textbf{Sự bùng nổ tổ hợp của Binomial và Sequential:} Ở mức $N=500$
+        , Binomial sinh ra hơn 207 triệu mệnh đề, tốn kém tài nguyên khổng lồ cho $t_{build}$
+        (hơn 211 giây). Trong khi đó, Sequential sinh ra chuỗi biến phụ quá dài liên tục dẫn đến lỗi tràn bộ nhớ (OOM)hệ
+        thống khi giải quyết bài toán quy mô lớn.
+        \item \textbf{Tính ưu việt của chia nhóm (Commander, Product, Binary):}
+        Các phương pháp sử dụng cơ chế gom nhóm hoặc lưới ảo thể hiện sự ổn định tuyệt vời ở không gian $N=500$
+        . Nổi bật nhất là \textbf{Commander} và \textbf{Product}
+        khi khống chế thành công số lượng mệnh đề dưới 3.5 triệu. \textbf{Product Encoding} đạt thời gian tìm kiếm (
+        $t_{search}$) vô cùng ấn tượng tại $N=500$ chỉ với $1.8833$
+        giây. Tuy nhiên, tính hiệu quả của Product và Binary phụ thuộc rất mạnh vào tham số kích thước nhóm (group
+        size); nếu chọn tham số quá nhỏ, solver có thể rơi vào trạng thái Time Limit ngay tại $N=50$.
+        \item Ngoài ra dữ liệu thực nghiệm cho thấy \textbf{Product Encoding} và \textbf{Binary Encoding}
+        gặp biến động lớn về thời gian tìm kiếm ($t_{search}$
+        ) trên các ma trận khác nhau. Điều này xuất phát từ bản chất hình học của bài toán N-Queens khi xử lý các đường
+        chéo:
+        \begin{itemize}
+            \item \textbf{Độ dài đường chéo không đồng đều:} Khác với hàng và cột luôn có kích thước cố định $N$
+            , các đường chéo (chính và phụ) có độ dài thay đổi, trong đó các đường chéo ở khu vực góc bàn cờ rất ngắn
+            (chỉ có 2, 3 hoặc 4 ô)[cite: 4].
+            \item \textbf{Độ trễ suy luận (Propagation Delay):} Nếu ép buộc thuật toán Product lập một ma trận ảo
+            $2 \times 2$, hoặc thuật toán Binary sinh ra các bit nhị phân chỉ để quản lý một đường chéo có $3$
+            ô, hệ thống sẽ tạo ra các biến phụ trung gian dư thừa[cite: 4]. Thay vì cắt nhánh trực tiếp (
+            $A \to \text{cấm } B$
+            ), bộ giải phải đi đường vòng qua biến phụ, làm suy giảm tốc độ Unit Propagation của SAT Solver[cite: 4].
+            \item \textbf{Phân mảnh không gian (Scattered Locality):}
+            Việc sinh ra hàng trăm biến phụ rời rạc cho hàng chục đường chéo nhỏ lẻ ở góc bàn cờ làm "loãng" bộ nhớ của
+            solver. Khi gặp mâu thuẫn, solver rất khó rút trích được các mệnh đề học (learned clauses) có giá trị từ mớ
+            biến phụ rải rác này[cite: 4].
+        \end{itemize}
+
+        Giải pháp thiết thực nhất để khắc phục hiện tượng này là áp dụng \textbf{Hybrid Encoding (Mã hóa lai)}
+        : thiết lập một ngưỡng $n$ nhất định (ví dụ $n \le 20$
+        ). Với các đường chéo ngắn dưới ngưỡng, thuật toán tự động bẻ lái sang dùng phương pháp Binomial (Pairwise) trực
+        tiếp. Khung Product/Binary chỉ được kích hoạt với các tập biến lớn, nơi tính năng nén mệnh đề của chúng thực sự
+        phát huy tác dụng[cite: 4].
+
+        \item \textbf{Sức mạnh áp đảo của Exact Solvers (Gurobi, CP-SAT):}
+        \textbf{CP-SAT} tối ưu hóa bộ nhớ hoàn hảo ($n_v=N, n_c=3$) nhờ duy trì các biến số nguyên và ràng buộc
+        \texttt{AllDifferent}. Ở $N=50, 100$, CP-SAT giải nhanh chóng nhưng chững lại tại $N=500$ (mất $\sim 558$ giây).
+        Ngược lại, \textbf{Gurobi MIP}
+        thể hiện sự vượt trội tuyệt đối. Thông qua các thuật toán cắt (cutting planes) và tự động phát hiện clique,
+        Gurobi chứng minh hiệu năng hàng đầu khi chỉ mất $0.0560$ giây để tìm ra nghiệm cho $N=500$.
     \end{itemize}
 
-    Dù các hệ thống MIP và CP cho thấy hiệu năng vượt trội với các bài toán có tính đại số hoặc hoán vị toàn cục như
-    N-Queens, việc nghiên cứu SAT Encoding vẫn giữ nguyên giá trị cốt lõi. Trong thực tế, các kiến trúc mã hóa (Product,
-    Sequential, Commander) là nền tảng bắt buộc khi mô hình cần được nhúng vào các hệ thống phần cứng số (Hardware
-    Verification) hoặc các bộ giải SMT (Satisfiability Modulo Theories), nơi các ràng buộc chỉ có thể được biểu diễn
-    dưới dạng logic mệnh đề.
 
+    \section{Kết luận và Tính khả dụng của Dữ liệu (Data Availability)}\label{sec:conclusion}
+    Nghiên cứu đã chỉ ra rằng mặc dù các bộ giải Lập trình nguyên thủy (như Gurobi) có tốc độ áp đảo trong bài toán
+    N-Queens, việc vận dụng linh hoạt các kiến trúc SAT Encoding (Commander, Product, Binary) đóng vai trò sống còn
+    trong việc kiểm soát sự bùng nổ không gian mệnh đề (Clause Explosion) so với Binomial truyền thống. Các mô hình tối
+    ưu này là cơ sở không thể thiếu khi triển khai bài toán vào các hệ thống phần cứng số (Hardware Verification) hoặc
+    SMT, nơi mọi logic đều phải đưa về dạng Boolean cơ bản.
+
+    \textbf{Data Availability:}
+    Toàn bộ mã nguồn triển khai các bộ mã hóa (Encoders), mã đối chứng Gurobi/CP-SAT, cùng với chi tiết kết quả
+    benchmark (nhật ký thực nghiệm) được lưu trữ công khai. Độc giả có thể truy cập để tái tạo thực nghiệm tại kho lưu
+    trữ GitHub: \url{https://github.com/tranvietoan/nQueens-SAT-main}\cite{ref_3}.
 
     \bibliographystyle{model1-num-names}
     \bibliography{cas-refs}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  7 OCT 2026 00:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  12 OCT 2026 22:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1009,6 +1009,15 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks36
 \@floatcapt=\box67
 )
+(E:\Milktex\New folder\tex/latex/tex-gyre\tgtermes.sty
+Package: tgtermes 2009/09/27 v1.2 TeX Gyre Termes as default roman family
+)
+LaTeX Font Info:    Trying to load font information for T5+qtm on input line 13
+.
+
+(E:\Milktex\New folder\tex/latex/tex-gyre\t5qtm.fd
+File: t5qtm.fd 2009/09/25 v1.2 font definition file for T5/qtm
+)
 (D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-ma
 in\out\cas-sc-template.aux
 Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
@@ -1016,41 +1025,41 @@ Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
 )
 \openout1 = `cas-sc-template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 13.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
-11.
+13.
  (E:\Milktex\New folder\tex/latex/stix\ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 13.
 LaTeX Font Info:    Trying to load font information for LS2+stix on input line 
-11.
+13.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
 (E:\Milktex\New folder\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1073,9 +1082,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (E:\Milktex\New folder\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 11.
-LaTeX Info: Command `\ddddot' is already robust on input line 11.
-Package hyperref Info: Link coloring ON on input line 11.
+LaTeX Info: Command `\dddot' is already robust on input line 13.
+LaTeX Info: Command `\ddddot' is already robust on input line 13.
+Package hyperref Info: Link coloring ON on input line 13.
 
 (D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-ma
 in\out\cas-sc-template.out)
@@ -1123,129 +1132,113 @@ in\out\cas-sc-template.out)
 \openout4 = `cas-sc-template.abs'.
 
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 29.
+ne 31.
 (E:\Milktex\New folder\tex/latex/stix\ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 29.
+e 31.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
 
 
 (E:\Milktex\New folder\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
 
 
 (E:\Milktex\New folder\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 29.
+ine 31.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 29.
+e 31.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 29.
+ne 31.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 29.
+e 31.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 29.
+e 31.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 )
-
-LaTeX Font Warning: Font shape `T5/stix/m/it' undefined
-(Font)              using `T5/stix/m/n' instead on input line 29.
-
-
 (D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-ma
 in\out\cas-sc-template.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 29.
-
-
-LaTeX Font Warning: Font shape `T5/stix/m/sc' undefined
-(Font)              using `T5/stix/m/n' instead on input line 29.
-
-
-LaTeX Font Warning: Font shape `T5/stix/b/n' undefined
-(Font)              using `T5/stix/m/n' instead on input line 32.
+Package hyperref Warning: Ignoring empty anchor on input line 31.
 
 LaTeX Font Info:    Trying to load font information for T5+cmss on input line 7
-7.
+9.
 (E:\Milktex\New folder\tex/latex/vntex\t5cmss.fd
 File: t5cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) [1
 
-{C:/Users/Lenovo LOQ/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-79.
-
-(E:\Milktex\New folder\tex/latex/stix\ts1stix.fd
-File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
+{C:/Users/Lenovo LOQ/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{E:/Milkt
+ex/New folder/fonts/enc/dvips/tex-gyre/q-t5.enc}{E:/Milktex/New folder/fonts/en
+c/dvips/tex-gyre/q-t5-sc.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+qtm on input line 8
+1.
+ (E:\Milktex\New folder\tex/latex/tex-gyre\ts1qtm.fd
+File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 )
 
-Package natbib Warning: Citation `ref_13' on page 2 undefined on input line 105
+Package natbib Warning: Citation `ref_13' on page 2 undefined on input line 107
 .
 
 
-Package natbib Warning: Citation `ref_2' on page 2 undefined on input line 131.
+Package natbib Warning: Citation `ref_2' on page 2 undefined on input line 133.
 
 
 
-Package natbib Warning: Citation `ref_3' on page 2 undefined on input line 132.
+Package natbib Warning: Citation `ref_3' on page 2 undefined on input line 134.
 
 
 
-Package natbib Warning: Citation `ref_2' on page 2 undefined on input line 137.
+Package natbib Warning: Citation `ref_2' on page 2 undefined on input line 139.
 
 
 
-Package natbib Warning: Citation `ref_3' on page 2 undefined on input line 140.
-
-
-[2{E:/Milktex/New folder/fonts/enc/dvips/stix/stix-ts1.enc}]
-
-Package natbib Warning: Citation `ref_2' on page 3 undefined on input line 141.
+Package natbib Warning: Citation `ref_3' on page 2 undefined on input line 142.
 
 
 
-Package natbib Warning: Citation `ref_3' on page 3 undefined on input line 151.
+Package natbib Warning: Citation `ref_2' on page 2 undefined on input line 143.
 
 
 
-Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 162.
+Package natbib Warning: Citation `ref_3' on page 2 undefined on input line 153.
 
 
+[2{E:/Milktex/New folder/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
 
-Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 162.
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 164.
 
 
 
@@ -1253,36 +1246,133 @@ Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 164.
 
 
 
-Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 167.
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 166.
 
 
 
-Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 172.
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 169.
 
 
 
-Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 178.
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 174.
 
 
-[3]
-No file cas-sc-template.bbl.
 
-Package natbib Warning: There were undefined citations.
+Package natbib Warning: Citation `ref_1' on page 3 undefined on input line 180.
 
-[4
+
+
+Package natbib Warning: Citation `ref_2' on page 3 undefined on input line 188.
+
+
+
+Package natbib Warning: Citation `ref_2' on page 3 undefined on input line 192.
+
+
+
+Package natbib Warning: Citation `ref_2' on page 3 undefined on input line 195.
+
+
+
+LaTeX Warning: Reference `tab:design_matrix' on page 3 undefined on input line 
+198.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 205.
+
+
+Package natbib Warning: Citation `ref_3' on page 3 undefined on input line 205.
+
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Font Warning: Font shape `T5/cmss/b/n' undefined
+(Font)              using `T5/cmss/bx/n' instead on input line 258.
+
+
+LaTeX Warning: Reference `tab:design_matrix' on page 3 undefined on input line 
+263.
+
+[3] [4
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.246 \end{document}
-                    ]
+l.290             \item \textbf
+                               {Phân mảnh không gian (Scattered Locality):}
+]
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 3
+04.
+ (E:\Milktex\New folder\tex/latex/vntex\t5cmtt.fd
+File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+
+Package natbib Warning: Citation `ref_3' on page 5 undefined on input line 321.
+
+
+
+(D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-ma
+in\out\cas-sc-template.bbl)
+
+Package natbib Warning: There were undefined citations.
+
+[5]
 (D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-ma
 in\out\cas-sc-template.aux
-LaTeX Font Info:    Trying to load font information for T1+stix on input line 8
-.
- (E:\Milktex\New folder\tex/latex/stix\t1stix.fd
-File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
-))
+LaTeX Font Info:    Trying to load font information for T1+qtm on input line 8.
+
+ (E:\Milktex\New folder\tex/latex/tex-gyre\t1qtm.fd
+File: t1qtm.fd 2009/09/25 v1.2 font definition file for T1/qtm
+)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -1292,34 +1382,41 @@ L3 programming layer <2025-12-24>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `cas-sc-template.out' has not changed.
-(rerunfilecheck)             Checksum: 1606161B21591A2841F9CF8D4B8CE792;3342.
+
+Package rerunfilecheck Warning: File `cas-sc-template.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `cas-sc-template.out':
+(rerunfilecheck)             Before: 1606161B21591A2841F9CF8D4B8CE792;3342
+(rerunfilecheck)             After:  D8AC4778221898450D4F70FC1575BA1E;3565.
  ) 
 Here is how much of TeX's memory you used:
- 18033 strings out of 467871
- 271016 string characters out of 5429388
- 692883 words of memory out of 5000000
- 46584 multiletter control sequences out of 15000+600000
- 691078 words of font info for 153 fonts, out of 8000000 for 9000
+ 18179 strings out of 467871
+ 273568 string characters out of 5429388
+ 706232 words of memory out of 5000000
+ 46708 multiletter control sequences out of 15000+600000
+ 722119 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,12n,98p,532b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<E:/Milktex/New folder/fonts/type1/public/stix/STIXGeneral-Regular.pfb><E:/Mi
-lktex/New folder/fonts/type1/public/stix/stix-mathcal.pfb><E:/Milktex/New folde
-r/fonts/type1/public/stix/stix-mathex.pfb><E:/Milktex/New folder/fonts/type1/pu
-blic/stix/stix-mathit.pfb><E:/Milktex/New folder/fonts/type1/public/stix/stix-m
-athrm.pfb><E:/Milktex/New folder/fonts/type1/public/stix/stix-mathsf.pfb><E:/Mi
-lktex/New folder/fonts/type1/vntex/vnr/vnr10.pfb><E:/Milktex/New folder/fonts/t
-ype1/vntex/vnr/vnr12.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr17.pfb
-><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr6.pfb><E:/Milktex/New folder/f
-onts/type1/vntex/vnr/vnr8.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr9
-.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnss9.pfb><E:/Milktex/New fol
-der/fonts/type1/vntex/vnr/vnssbx10.pfb>
+ 90i,13n,98p,532b,607s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<E:/Milktex/New folder/fonts/type1/public/tex-gyre/qtmb.pfb><E:/Milktex/New f
+older/fonts/type1/public/tex-gyre/qtmr.pfb><E:/Milktex/New folder/fonts/type1/p
+ublic/tex-gyre/qtmri.pfb><E:/Milktex/New folder/fonts/type1/public/stix/stix-ma
+thcal.pfb><E:/Milktex/New folder/fonts/type1/public/stix/stix-mathex.pfb><E:/Mi
+lktex/New folder/fonts/type1/public/stix/stix-mathit.pfb><E:/Milktex/New folder
+/fonts/type1/public/stix/stix-mathrm.pfb><E:/Milktex/New folder/fonts/type1/pub
+lic/stix/stix-mathsf.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnss9.pfb
+><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnssbx10.pfb><E:/Milktex/New fold
+er/fonts/type1/vntex/vnr/vntt10.pfb>
 Output written on D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-ma
-in\nQueens-SAT-main\out\cas-sc-template.pdf (4 pages, 226864 bytes).
+in\nQueens-SAT-main\out\cas-sc-template.pdf (5 pages, 224186 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
+ 164 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
  97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

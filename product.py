@@ -7,7 +7,7 @@ class ProductEncoder:
         n=len(variables)
         if n<=1:
             return []
-        if n<=4:
+        if n<=20:
             clauses=[]
             for i in range(n):
                 for j in range(i+1,n):
