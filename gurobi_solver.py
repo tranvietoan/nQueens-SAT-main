@@ -27,7 +27,7 @@ def solve_nqueens_gurobi(N):
 
     #Kết thúc thời gian Build
     build_time = time.time() - start_build
-
+    # Số lượng biến và clauses
     nv = m.NumVars
     nc = m.NumConstrs
     # Đo thời gian

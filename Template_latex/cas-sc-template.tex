@@ -6,6 +6,11 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{float}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\sffamily\bfseries}{\thesection.}{0.4em}{}
+\titleformat{\subsection}{\normalfont\sffamily\bfseries}{\thesubsection.}{0.4em}{}
+\usepackage{caption}
 
 
 
@@ -14,8 +19,8 @@
     \shortauthors{Trần Việt Toàn}
 
     \title[mode=title]{
-\bfseries
-{Biểu diễn SAT tối ưu cho bài toán N-Queens: Đánh giá thực nghiệm các phương pháp mã hóa.}}
+        \textbf
+        {Biểu diễn SAT tối ưu cho bài toán N-Queens: Đánh giá thực nghiệm các phương pháp mã hóa.}}
 
     \author[1]{Trần Việt Toàn}
     \address[1]{Trường Đại học Công nghệ - ĐHQGHN}
@@ -200,6 +205,9 @@
     $N = 50, 100, 500$. Đối với các phương pháp chia nhóm (Product, Binary), cấu hình nhóm $n \le 20$
     được sử dụng làm đại diện minh họa. Những cấu hình vượt quá khả năng xử lý của bộ nhớ hoặc hết thời gian được đánh
     dấu là OOM (Out of Memory) hoặc TL (Time Limit).
+    Bên cạnh đó, xu hướng hiệu năng tìm kiếm ($t_{search}$
+    ) của các phương pháp được trực quan hóa thông qua biểu đồ Cactus ở Hình \ref{fig:cactus_plot}.
+
 
     \begin{table}[H]
         \centering
@@ -259,22 +267,33 @@
         }
         \label{tab:design_matrix}
     \end{table}
+    \begin{center}
+        \includegraphics[width=0.65\textwidth]{cactus_plot.png}
+        \captionof{figure}{Cactus plot minh họa hiệu năng tìm kiếm ($t_{search}$) giữa các phương pháp.}
+        \label{fig:cactus_plot}
+    \end{center}
 
     \subsection{Bàn luận và Đánh giá}
-    Dựa trên kết quả từ Bảng \ref{tab:design_matrix}, chúng tôi rút ra các kết luận quan trọng sau:
+    Dựa trên kết quả định lượng từ Bảng \ref{tab:design_matrix}
+    và xu hướng hiệu năng được trực quan hóa qua biểu đồ Cactus (Hình \ref{fig:cactus_plot}
+    ), chúng tôi rút ra các kết luận quan trọng sau:
 
     \begin{itemize}
         \item \textbf{Sự bùng nổ tổ hợp của Binomial và Sequential:} Ở mức $N=500$
         , Binomial sinh ra hơn 207 triệu mệnh đề, tốn kém tài nguyên khổng lồ cho $t_{build}$
         (hơn 211 giây). Trong khi đó, Sequential sinh ra chuỗi biến phụ quá dài liên tục dẫn đến lỗi tràn bộ nhớ (OOM)hệ
-        thống khi giải quyết bài toán quy mô lớn.
+        thống khi giải quyết bài toán quy mô lớn. Trên Hình \ref{fig:cactus_plot}
+        , sự bùng nổ này được thể hiện rõ qua các đường cong dốc đứng hoặc bị đứt gãy sớm do vượt quá giới hạn tài
+        nguyên.
+
         \item \textbf{Tính ưu việt của chia nhóm (Commander, Product, Binary):}
-        Các phương pháp sử dụng cơ chế gom nhóm hoặc lưới ảo thể hiện sự ổn định tuyệt vời ở không gian $N=500$
-        . Nổi bật nhất là \textbf{Commander} và \textbf{Product}
-        khi khống chế thành công số lượng mệnh đề dưới 3.5 triệu. \textbf{Product Encoding} đạt thời gian tìm kiếm (
-        $t_{search}$) vô cùng ấn tượng tại $N=500$ chỉ với $1.8833$
+        Như biểu đồ Cactus minh họa, các phương pháp sử dụng cơ chế gom nhóm hoặc lưới ảo duy trì được đường tiệm cận
+        thời gian ($t_{search}$) rất thấp và ổn định ở không gian $N=500$. Nổi bật nhất là \textbf{Commander} và
+        \textbf{Product} khi khống chế thành công số lượng mệnh đề dưới 3.5 triệu. \textbf{Product Encoding}
+        đạt thời gian tìm kiếm vô cùng ấn tượng tại $N=500$ chỉ với $1.8833$
         giây. Tuy nhiên, tính hiệu quả của Product và Binary phụ thuộc rất mạnh vào tham số kích thước nhóm (group
         size); nếu chọn tham số quá nhỏ, solver có thể rơi vào trạng thái Time Limit ngay tại $N=50$.
+
         \item Ngoài ra dữ liệu thực nghiệm cho thấy \textbf{Product Encoding} và \textbf{Binary Encoding}
         gặp biến động lớn về thời gian tìm kiếm ($t_{search}$
         ) trên các ma trận khác nhau. Điều này xuất phát từ bản chất hình học của bài toán N-Queens khi xử lý các đường
@@ -282,30 +301,29 @@
         \begin{itemize}
             \item \textbf{Độ dài đường chéo không đồng đều:} Khác với hàng và cột luôn có kích thước cố định $N$
             , các đường chéo (chính và phụ) có độ dài thay đổi, trong đó các đường chéo ở khu vực góc bàn cờ rất ngắn
-            (chỉ có 2, 3 hoặc 4 ô)[cite: 4].
+            (chỉ có 2, 3 hoặc 4 ô).
             \item \textbf{Độ trễ suy luận (Propagation Delay):} Nếu ép buộc thuật toán Product lập một ma trận ảo
             $2 \times 2$, hoặc thuật toán Binary sinh ra các bit nhị phân chỉ để quản lý một đường chéo có $3$
-            ô, hệ thống sẽ tạo ra các biến phụ trung gian dư thừa[cite: 4]. Thay vì cắt nhánh trực tiếp (
-            $A \to \text{cấm } B$
-            ), bộ giải phải đi đường vòng qua biến phụ, làm suy giảm tốc độ Unit Propagation của SAT Solver[cite: 4].
+            ô, hệ thống sẽ tạo ra các biến phụ trung gian dư thừa. Thay vì cắt nhánh trực tiếp ($A \to \text{-} B$
+            ), bộ giải phải đi đường vòng qua biến phụ, làm suy giảm tốc độ Unit Propagation của SAT Solver.
             \item \textbf{Phân mảnh không gian (Scattered Locality):}
             Việc sinh ra hàng trăm biến phụ rời rạc cho hàng chục đường chéo nhỏ lẻ ở góc bàn cờ làm "loãng" bộ nhớ của
             solver. Khi gặp mâu thuẫn, solver rất khó rút trích được các mệnh đề học (learned clauses) có giá trị từ mớ
-            biến phụ rải rác này[cite: 4].
+            biến phụ rải rác này.
         \end{itemize}
 
         Giải pháp thiết thực nhất để khắc phục hiện tượng này là áp dụng \textbf{Hybrid Encoding (Mã hóa lai)}
         : thiết lập một ngưỡng $n$ nhất định (ví dụ $n \le 20$
         ). Với các đường chéo ngắn dưới ngưỡng, thuật toán tự động bẻ lái sang dùng phương pháp Binomial (Pairwise) trực
         tiếp. Khung Product/Binary chỉ được kích hoạt với các tập biến lớn, nơi tính năng nén mệnh đề của chúng thực sự
-        phát huy tác dụng[cite: 4].
+        phát huy tác dụng.
 
-        \item \textbf{Sức mạnh áp đảo của Exact Solvers (Gurobi, CP-SAT):}
-        \textbf{CP-SAT} tối ưu hóa bộ nhớ hoàn hảo ($n_v=N, n_c=3$) nhờ duy trì các biến số nguyên và ràng buộc
-        \texttt{AllDifferent}. Ở $N=50, 100$, CP-SAT giải nhanh chóng nhưng chững lại tại $N=500$ (mất $\sim 558$ giây).
-        Ngược lại, \textbf{Gurobi MIP}
-        thể hiện sự vượt trội tuyệt đối. Thông qua các thuật toán cắt (cutting planes) và tự động phát hiện clique,
-        Gurobi chứng minh hiệu năng hàng đầu khi chỉ mất $0.0560$ giây để tìm ra nghiệm cho $N=500$.
+        \item \textbf{Sức mạnh áp đảo của Exact Solvers (Gurobi, CP-SAT):} \textbf{CP-SAT} tối ưu hóa bộ nhớ hoàn hảo (
+        $n_v=N, n_c=3$) nhờ duy trì các biến số nguyên và ràng buộc \texttt{AllDifferent}. Ở $N=50, 100$
+        , CP-SAT giải nhanh chóng nhưng chững lại tại $N=500$ (mất $\sim 558$ giây). Ngược lại, \textbf{Gurobi MIP}
+        thể hiện sự vượt trội tuyệt đối, đường biểu diễn của phương pháp này trên Hình \ref{fig:cactus_plot}
+        gần như nằm sát trục hoành. Thông qua các thuật toán cắt (cutting planes) và tự động phát hiện clique, Gurobi
+        chứng minh hiệu năng hàng đầu khi chỉ mất $0.0560$ giây để tìm ra nghiệm cho $N=500$.
     \end{itemize}
 
 
@@ -318,7 +336,7 @@
 
     \textbf{Data Availability:}
     Toàn bộ mã nguồn triển khai các bộ mã hóa (Encoders), mã đối chứng Gurobi/CP-SAT, cùng với chi tiết kết quả
-    benchmark (nhật ký thực nghiệm) được lưu trữ công khai. Độc giả có thể truy cập để tái tạo thực nghiệm tại kho lưu
+    benchmark được lưu trữ công khai. Độc giả có thể truy cập để tái tạo thực nghiệm tại kho lưu
     trữ GitHub: \url{https://github.com/tranvietoan/nQueens-SAT-main}\cite{ref_3}.
 
     \bibliographystyle{model1-num-names}

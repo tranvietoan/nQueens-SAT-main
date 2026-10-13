@@ -6,7 +6,7 @@ from sequential import SequentialEncoder
 from commander import CommanderEncoder
 from product import ProductEncoder
 from binary import BinaryEncoder
-N=500
+N=1000
 def var(r, c):
  return r*N+c+1
 
@@ -139,4 +139,4 @@ def run_solver_with_encoder(encoder_name):
     # Dọn dẹp bộ nhớ
     solver.delete()
 
-run_solver_with_encoder("Binary")
+run_solver_with_encoder("Product")

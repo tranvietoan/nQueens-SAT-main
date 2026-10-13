@@ -27,10 +27,9 @@ class BinaryEncoder:
 
         #Ánh xạ mỗi biến X_i với một chuỗi nhị phân
         for i, var in enumerate(variables):
-            #Chuyển chỉ số i thành chuỗi nhị phân
             binary_str = format(i, f'0{k}b')
 
-            #X_i -> trạng thái của Y tương ứng với chuỗi nhị phân
+            #X_i -> trạng thái của Y
             for bit_index, bit_value in enumerate(binary_str):
                 y_var = Y[bit_index]
                 if bit_value == '1':

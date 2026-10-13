@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  12 OCT 2026 22:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  14 OCT 2026 01:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1006,6 +1006,39 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks36
 \@floatcapt=\box67
 )
+(E:\Milktex\New folder\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box68
+\beforetitleunit=\skip73
+\aftertitleunit=\skip74
+\ttl@plus=\dimen272
+\ttl@minus=\dimen273
+\ttl@toksa=\toks37
+\titlewidth=\dimen274
+\titlewidthlast=\dimen275
+\titlewidthfirst=\dimen276
+)
+(E:\Milktex\New folder\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(E:\Milktex\New folder\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen277
+\captionmargin=\dimen278
+\caption@leftmargin=\dimen279
+\caption@rightmargin=\dimen280
+\caption@width=\dimen281
+\caption@indent=\dimen282
+\caption@parindent=\dimen283
+\caption@hangindent=\dimen284
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count357
+\c@continuedfloat=\count358
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
 (D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
 in/auxil\cas-sc-template.aux
 Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
@@ -1013,54 +1046,54 @@ Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
 )
 \openout1 = `cas-sc-template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 17.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
-12.
+17.
  (E:\Milktex\New folder\tex/latex/stix\ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 17.
 LaTeX Font Info:    Trying to load font information for LS2+stix on input line 
-12.
+17.
 (E:\Milktex\New folder\tex/latex/stix\ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 (E:\Milktex\New folder\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count357
-\scratchdimen=\dimen272
-\scratchbox=\box68
-\nofMPsegments=\count358
-\nofMParguments=\count359
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count360
-\MPscratchDim=\dimen273
-\MPnumerator=\count361
-\makeMPintoPDFobject=\count362
-\everyMPtoPDFconversion=\toks38
+\scratchcounter=\count359
+\scratchdimen=\dimen285
+\scratchbox=\box69
+\nofMPsegments=\count360
+\nofMParguments=\count361
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count362
+\MPscratchDim=\dimen286
+\MPnumerator=\count363
+\makeMPintoPDFobject=\count364
+\everyMPtoPDFconversion=\toks39
 ) (E:\Milktex\New folder\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1069,9 +1102,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (E:\Milktex\New folder\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 12.
-LaTeX Info: Command `\ddddot' is already robust on input line 12.
-Package hyperref Info: Link coloring ON on input line 12.
+LaTeX Info: Command `\dddot' is already robust on input line 17.
+LaTeX Info: Command `\ddddot' is already robust on input line 17.
+Package hyperref Info: Link coloring ON on input line 17.
 
 (D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
 in/auxil\cas-sc-template.out)
@@ -1115,66 +1148,68 @@ in/auxil\cas-sc-template.out)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 \verbatim@out=\write4
 \openout4 = `cas-sc-template.abs'.
 
 
 LaTeX Font Warning: Font shape `T5/stix/b/n' undefined
-(Font)              using `T5/stix/m/n' instead on input line 32.
+(Font)              using `T5/stix/m/n' instead on input line 37.
 
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 32.
+ne 37.
 (E:\Milktex\New folder\tex/latex/stix\ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 32.
+e 37.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
 
 
 (E:\Milktex\New folder\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
 
 
 (E:\Milktex\New folder\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 32.
+ine 37.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 32.
+e 37.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 32.
+ne 37.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 32.
+e 37.
 
 (E:\Milktex\New folder\tex/latex/stix\ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 32.
+e 37.
 
 (E:\Milktex\New folder\tex/latex/stix\ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
@@ -1182,19 +1217,19 @@ File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 )
 
 LaTeX Font Warning: Font shape `T5/stix/m/it' undefined
-(Font)              using `T5/stix/m/n' instead on input line 32.
+(Font)              using `T5/stix/m/n' instead on input line 37.
 
 
 (D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
 in/auxil\cas-sc-template.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 32.
+Package hyperref Warning: Ignoring empty anchor on input line 37.
 
 
 LaTeX Font Warning: Font shape `T5/stix/m/sc' undefined
-(Font)              using `T5/stix/m/n' instead on input line 32.
+(Font)              using `T5/stix/m/n' instead on input line 37.
 
-LaTeX Font Info:    Trying to load font information for T5+cmss on input line 8
+LaTeX Font Info:    Trying to load font information for T5+cmss on input line 4
 0.
 (E:\Milktex\New folder\tex/latex/vntex\t5cmss.fd
 File: t5cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -1202,25 +1237,30 @@ File: t5cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 
 {C:/Users/Lenovo LOQ/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-82.
+87.
 
 (E:\Milktex\New folder\tex/latex/stix\ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
-) [2{E:/Milktex/New folder/fonts/enc/dvips/stix/stix-ts1.enc}] [3] [4
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.278         \item N
-                     goài ra dữ liệu thực nghiệm cho thấy \textbf...
-]
+) [2{E:/Milktex/New folder/fonts/enc/dvips/stix/stix-ts1.enc}] [3]
+<cactus_plot.png, id=115, 626.0991pt x 400.1349pt>
+File: cactus_plot.png Graphic file (type png)
+<use cactus_plot.png>
+Package pdftex.def Info: cactus_plot.png  used on input line 271.
+(pdftex.def)             Requested size: 304.4132pt x 194.54752pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 272.
+See the caption package documentation for explanation.
+
+[4] [5 <./cactus_plot.png>]
 LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 3
-05.
+22.
  (E:\Milktex\New folder\tex/latex/vntex\t5cmtt.fd
 File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 (D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
-in/auxil\cas-sc-template.bbl) [5]
+in/auxil\cas-sc-template.bbl) [6]
 (D:/K1_2026_2027/Cac_van_de_hien_dai_trong_KHMT/nQueens-SAT-main/nQueens-SAT-ma
 in/auxil\cas-sc-template.aux
 LaTeX Font Info:    Trying to load font information for T1+stix on input line 8
@@ -1240,13 +1280,13 @@ Package rerunfilecheck Info: File `cas-sc-template.out' has not changed.
 (rerunfilecheck)             Checksum: D8AC4778221898450D4F70FC1575BA1E;3565.
  ) 
 Here is how much of TeX's memory you used:
- 18105 strings out of 467871
- 272040 string characters out of 5429388
- 705890 words of memory out of 5000000
- 46644 multiletter control sequences out of 15000+600000
- 691389 words of font info for 154 fonts, out of 8000000 for 9000
+ 19700 strings out of 467871
+ 301356 string characters out of 5429388
+ 733765 words of memory out of 5000000
+ 48228 multiletter control sequences out of 15000+600000
+ 691357 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,13n,98p,444b,543s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,13n,98p,444b,676s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <E:/Milktex/New folder/fonts/type1/public/stix/STIXGeneral-Regular.pfb><E:/Mi
 lktex/New folder/fonts/type1/public/stix/stix-mathcal.pfb><E:/Milktex/New folde
 r/fonts/type1/public/stix/stix-mathex.pfb><E:/Milktex/New folder/fonts/type1/pu
@@ -1260,9 +1300,9 @@ onts/type1/vntex/vnr/vnr8.pfb><E:/Milktex/New folder/fonts/type1/vntex/vnr/vnr9
 der/fonts/type1/vntex/vnr/vnssbx10.pfb><E:/Milktex/New folder/fonts/type1/vntex
 /vnr/vntt10.pfb>
 Output written on D:/K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-ma
-in\nQueens-SAT-main\auxil\cas-sc-template.pdf (5 pages, 261515 bytes).
+in\nQueens-SAT-main\auxil\cas-sc-template.pdf (6 pages, 496801 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 210 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

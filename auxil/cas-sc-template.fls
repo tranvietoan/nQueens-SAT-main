@@ -189,6 +189,12 @@ INPUT E:\Milktex\New folder\tex\latex\natbib\natbib.sty
 INPUT E:\Milktex\New folder\tex\latex\natbib\natbib.sty
 INPUT E:\Milktex\New folder\tex\latex\float\float.sty
 INPUT E:\Milktex\New folder\tex\latex\float\float.sty
+INPUT E:\Milktex\New folder\tex\latex\titlesec\titlesec.sty
+INPUT E:\Milktex\New folder\tex\latex\titlesec\titlesec.sty
+INPUT E:\Milktex\New folder\tex\latex\caption\caption.sty
+INPUT E:\Milktex\New folder\tex\latex\caption\caption.sty
+INPUT E:\Milktex\New folder\tex\latex\caption\caption3.sty
+INPUT E:\Milktex\New folder\tex\latex\caption\caption3.sty
 INPUT D:\K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-main\auxil\cas-sc-template.aux
 INPUT D:\K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-main\auxil\cas-sc-template.aux
 INPUT D:\K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-main\auxil\cas-sc-template.aux
@@ -306,6 +312,11 @@ INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathtt.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vnr6.tfm
 INPUT D:\K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-main\auxil\cas-sc-template.abs
 INPUT D:\K1_2026_2027\Cac_van_de_hien_dai_trong_KHMT\nQueens-SAT-main\nQueens-SAT-main\auxil\cas-sc-template.abs
+INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmss.fd
+INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmss.fd
+INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmss.fd
+INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vnss10.tfm
+INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vnssbx10.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathrm.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathrm.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathit.tfm
@@ -334,19 +345,14 @@ INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathsfit.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathsfit.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathtt.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathtt.tfm
-INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vnr12.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vnr8.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vnr9.tfm
-INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmss.fd
-INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmss.fd
-INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmss.fd
 INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vnss9.tfm
 INPUT C:\Users\Lenovo LOQ\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT E:\Milktex\New folder\tex\latex\stix\ts1stix.fd
 INPUT E:\Milktex\New folder\tex\latex\stix\ts1stix.fd
 INPUT E:\Milktex\New folder\tex\latex\stix\ts1stix.fd
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\ts1-stixgeneral.tfm
-INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vnss10.tfm
 INPUT E:\Milktex\New folder\fonts\enc\dvips\stix\stix-ts1.enc
 INPUT E:\Milktex\New folder\fonts\tfm\vntex\vnr\vnssbx10.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathrm.tfm
@@ -363,6 +369,13 @@ INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathcal.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathsf.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathsfit.tfm
 INPUT E:\Milktex\New folder\fonts\tfm\public\stix\stix-mathtt.tfm
+INPUT .\cactus_plot.png
+INPUT .\cactus_plot.png
+INPUT .\cactus_plot.png
+INPUT .\cactus_plot.png
+INPUT .\cactus_plot.png
+INPUT .\cactus_plot.png
+INPUT .\cactus_plot.png
 INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmtt.fd
 INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmtt.fd
 INPUT E:\Milktex\New folder\tex\latex\vntex\t5cmtt.fd
